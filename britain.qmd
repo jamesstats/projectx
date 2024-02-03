@@ -3,7 +3,7 @@ title: ""
 format: html
 ---
 
-```{r,westminster, echo=FALSE,warning=FALSE, fig.align='center',dpi=1080, fig.width=12, fig.height=8}
+```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center',dpi=1080, fig.width=12, fig.height=8}
 library(ggplot2)
 library(zoo)
 library(dplyr)

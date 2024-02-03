@@ -12,7 +12,7 @@ website:
         text: Great Britain 
     right:
       - icon: twitter
-        href: https//twitter.com/james_polls
+        href: https://twitter.com/james_polls
         aria-label: James twitter
       - icon: github
         href: https://github.com/jamesstats/projectx
