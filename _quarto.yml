@@ -8,14 +8,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About 
+      - href: britain.qmd
+        text: Great Britain 
     right:
       - icon: twitter
-        href: https//twiter.com/james_polls
+        href: https//twitter.com/james_polls
         aria-label: James twitter
       - icon: github
-        href: github.io/jamesstats
+        href: https://github.com/jamesstats/projectx
         aria-label: Jamesstats Github 
 
 format:

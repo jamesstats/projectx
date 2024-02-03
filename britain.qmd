@@ -1,0 +1,25 @@
+---
+title: ""
+format: html
+---
+
+```{r,westminster, echo=FALSE,warning=FALSE, fig.align='center',dpi=1080, fig.width=12, fig.height=8}
+library(ggplot2)
+library(zoo)
+library(dplyr)
+library(readxl)
+
+greatbritain <- read_excel("~/Documents/elections_files/greatbritain.xlsx")
+
+ggplot(greatbritain, mapping = aes(x=end_date, y=Share, color=Party))+
+  geom_point(alpha=1/20, size=5)+
+  geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=2)+
+  scale_colour_manual(values = c('blue','green','tomato',"gold","cyan","yellow"))+
+  theme_bw()+
+  labs(title = 'Westminster Voting Intention',caption = 'source::britainelects\njamesstats.github.io/projectx',
+       x='',y='',color='')+
+  theme(legend.position = 'bottom',plot.title = element_text(face = 'bold'),
+        plot.caption = element_text(face = 'italic', size = 10)) 
+```
+
+ 
