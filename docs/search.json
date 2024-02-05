@@ -7,13 +7,6 @@
     "text": "A look at presidential elections performance from 2012 to 2020 in this majority latino city of Lawrence in the state of Massachusetts. The city is also the poorest in the state located in the north east bordering Salem, New Hampshire. Obama’12 received 83% of the vote, Clinton ’16 received 81% with 1,000 more votes and Biden’20 did very poorly getting only 73% from Trump improvement with Latino voters."
   },
   {
-    "objectID": "britain.html",
-    "href": "britain.html",
-    "title": "projectx",
-    "section": "",
-    "text": "Attaching package: 'zoo'\n\n\nThe following objects are masked from 'package:base':\n\n    as.Date, as.Date.numeric\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union"
-  },
-  {
     "objectID": "philly.html",
     "href": "philly.html",
     "title": "projectx",
