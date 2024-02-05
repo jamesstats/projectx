@@ -10,6 +10,8 @@ website:
         text: Home
       - href: britain.qmd
         text: Great Britain 
+      - href: philly.qmd
+        text: Philadelphia
     right:
       - icon: twitter
         href: https://twitter.com/james_polls
