@@ -3,11 +3,13 @@ title: ""
 format: html
 ---
 
-```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center',dpi=1080, fig.width=12, fig.height=8}
+A compilation of polls for the next U.K general election.
+
+```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 library(ggplot2)
 library(zoo)
 library(dplyr)
-library(readxl)
+library(readxl) 
 
 greatbritain <- read_excel("~/Documents/elections_files/greatbritain.xlsx")
 
@@ -20,6 +22,5 @@ ggplot(greatbritain, mapping = aes(x=end_date, y=Share, color=Party))+
        x='',y='',color='')+
   theme(legend.position = 'bottom',plot.title = element_text(face = 'bold'),
         plot.caption = element_text(face = 'italic', size = 10)) 
-```
 
- 
+```

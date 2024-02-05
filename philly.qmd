@@ -3,6 +3,8 @@ title: ""
 editor: visual
 ---
 
+A look at the presidential election results of the city of Philadelphia which is important for statewide victory for democrats. Philadelphia is also a majority black city, they live in the dark blue areas as they are a strong voting block for the democrats.
+
 ![](images/obama_mccain_phil.png){fig-align="center"}
 
 Obama\`08 dominated the city of Philadelphia against McCain, he even did very well in the white working class area in the north of the city.

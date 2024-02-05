@@ -13,7 +13,7 @@ website:
       - href: philly.qmd
         text: Philadelphia
       - href: prestwozero.qmd
-        text: BidenvsTrump Vol1 Polls
+        text: Election Polls 
     right:
       - icon: twitter
         href: https://twitter.com/james_polls
