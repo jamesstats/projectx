@@ -12,6 +12,8 @@ website:
         text: Great Britain 
       - href: philly.qmd
         text: Philadelphia
+      - href: pres2020.qmd
+        text: U.S2020 Polls
     right:
       - icon: twitter
         href: https://twitter.com/james_polls
