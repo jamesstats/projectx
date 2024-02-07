@@ -2,8 +2,14 @@
 title: " "
 editor: visual
 ---
+
 A look at Massachusetts population 10 year change courtesy of the commonwealth government by towns over layered with counties.
-<p>From 1990 to 2000, the eastern part of the state gained while the central to the west lost population. The City of Boston gained the by adding over 14,000 people while the town of Harvard(not the school) lost more than 6,000 people.</P> 
+
+<p>
+
+From **1990 to 2000**, the eastern part of the state gained while the central to the west lost population. *The City of Boston gained the by adding over 14,000 people while the town of Harvard(not the school) lost more than 6,000 people*.
+
+</P>
 
 ```{r,MASSPOPCH90_00,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
 library(sf)
@@ -23,9 +29,9 @@ ggplot(mass)+
 
 ```
 
-<p>For the second decade in a row, the City of Boston gained population, it gained almost 28,000 people and the town of Braintree lost the most with about 3,000 people leaving. Overall, the eastern part of the state faired well with lower population increase and the central to west didn't lose too many people.</p>
+<p>For the second decade in a row, the ***City of Boston gained population, it gained almost 28,000 people*** and the town of Braintree lost the most with about 3,000 people leaving. Overall, the eastern part of the state fared well with lower population increase and the central to west didn't lose too many people.</p>
 
-```{r,MASSPOPCH00_10,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
+```{r,MASSPOPCH00_10,echo=FALSE, warning=FALSE, message=FALSE, fig.align='center'}
 library(sf)
 library(extrafont) 
 library(ggplot2)
@@ -42,4 +48,3 @@ ggplot(mass)+
   theme(plot.title = element_text(family = "AppleMyungjo"),plot.caption = element_text(face = "italic",family = "AppleMyungjo"), plot.subtitle = element_text(family = "AppleMyungjo", size = 12))   
 
 ```
-
