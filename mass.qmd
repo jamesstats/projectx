@@ -1,0 +1,45 @@
+---
+title: " "
+editor: visual
+---
+A look at Massachusetts population 10 year change courtesy of the commonwealth government by towns over layered with counties.
+<p>From 1990 to 2000, the eastern part of the state gained while the central to the west lost population. The City of Boston gained the by adding over 14,000 people while the town of Harvard(not the school) lost more than 6,000 people.</P> 
+
+```{r,MASSPOPCH90_00,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
+library(sf)
+library(extrafont) 
+library(ggplot2)
+mass<-st_read("~/Documents/rstudio/projectx/masstowns_shp/TOWNSSURVEY_POLY.shp")
+counties<-st_read("~/Documents/rstudio/projectx/masscounties/COUNTIESSURVEY_POLYM.shp")
+ggplot(mass)+
+  geom_sf(aes(fill = POPCH90_00),color=NA)+
+  
+  geom_sf(data = counties, fill=NA, color="black")+
+  scale_fill_gradient2('Change', low='#be2f3a', mid = '#ffffff', 
+                       high = '#1d3557', midpoint = 0,breaks=seq(-15000,15000,5000)) +
+  labs(title = "Massachusetts Population Change Between 1990-2000",caption = "sources::MassGIS.gov\njamesstats.github.io/projectx/", subtitle = "Changes by towns")+
+  theme_void() +
+  theme(plot.title = element_text(family = "AppleMyungjo"),plot.caption = element_text(face = "italic",family = "AppleMyungjo"), plot.subtitle = element_text(family = "AppleMyungjo", size = 12))  
+
+```
+
+<p>For the second decade in a row, the City of Boston gained population, it gained almost 28,000 people and the town of Braintree lost the most with about 3,000 people leaving. Overall, the eastern part of the state faired well with lower population increase and the central to west didn't lose too many people.</p>
+
+```{r,MASSPOPCH00_10,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
+library(sf)
+library(extrafont) 
+library(ggplot2)
+mass<-st_read("~/Documents/rstudio/projectx/masstowns_shp/TOWNSSURVEY_POLY.shp")
+counties<-st_read("~/Documents/rstudio/projectx/masscounties/COUNTIESSURVEY_POLYM.shp")
+ggplot(mass)+
+  geom_sf(aes(fill = POPCH00_10),color=NA)+
+  
+  geom_sf(data = counties, fill=NA, color="black")+
+  scale_fill_gradient2('Change', low='#be2f3a', mid = '#ffffff', 
+                       high = '#1d3557', midpoint = 0, breaks=seq(-30000,30000,3000)) +
+  labs(title = "Massachusetts Population Change Between 2000-2010",caption = "sources::MassGIS.gov\njamesstats.github.io/projectx/", subtitle = "Changes by towns")+
+  theme_void() +
+  theme(plot.title = element_text(family = "AppleMyungjo"),plot.caption = element_text(face = "italic",family = "AppleMyungjo"), plot.subtitle = element_text(family = "AppleMyungjo", size = 12))   
+
+```
+

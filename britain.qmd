@@ -5,7 +5,7 @@ format: html
 
 A compilation of polls for the next U.K general election.
 
-![map prediction of 22% win for the Labour Party](images/labwin.png){fig-align="center"}
+![map prediction of 22% win for the Labour Party](images/labwin.png){fig-align="center" width="500"}
 
 ```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 library(ggplot2)
