@@ -13,9 +13,13 @@ Obama\`08 dominated the city of Philadelphia against McCain, he even did very we
 
 Obama\`12 also did well even though he lost about 1,000 votes mainly due to low turnout in the black neighborhood. He maintained his support in the north but the story was Romney doing worse than McCain did 2008.
 
+![](images/obama_08_12-01.png){fig-align="center"}
+
+The change from 2008 and 2012 for Obama. 2012 had turnout drop from 2008, green areas is where he did better in '12 and blue areas are where he did worse from '08.
+
 ![](images/mccain_romney_phil.png){fig-align="center"}
 
-Map showing how McCain'08 and Romney'12 performed. McCain did well in the white areas while Romney did well in the black and latino areas of the city.
+Map showing how McCain'08 and Romney'12 performed. McCain did well in the white areas while Romney did well in the black and Latino areas of the city.
 
 ![](images/turnout_08_12_phil.png){fig-align="center"}
 

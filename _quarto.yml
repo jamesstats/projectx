@@ -3,29 +3,36 @@ project:
   output-dir: docs
 
 website:
-  title: ""
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: britain.qmd
-        text: Great Britain 
-      - href: philly.qmd
-        text: Philadelphia
-      - href: prestwozero.qmd
-        text: Election Polls 
-      - href: mass.qmd
-        text: Massachusetts Population
-    right:
-      - icon: twitter
-        href: https://twitter.com/james_polls
-        aria-label: James twitter
+  search: True 
+  reader-mode: true 
+  back-to-top-navigation: true 
+  page-footer: 
+    center: "Copyright 2024, Jamesstats"
+    right: 
       - icon: github
         href: https://github.com/jamesstats/projectx
-        aria-label: Jamesstats Github 
-
+      - icon: twitter
+        href: https://twitter.com/james_polls
+  sidebar:
+     
+    - contents:
+      - section: "Polls"
+        contents:
+          - text: "Westminister"
+            href: britain.qmd  
+          - text: "2020 Polls"
+            href: prestwozero.qmd
+      - section: "Maps"
+        contents: 
+          - text: "Philadelphia 08 vs 12"
+            href: philly.qmd
+          - text: "Massachusetts"
+            href: mass.qmd 
+          - text: "Lawrence"
+            href: index.qmd
+            
 format:
   html:
     theme: cosmo
-    css: styles.css
-    toc: true
+css: styles.css  
+     
