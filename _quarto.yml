@@ -28,6 +28,8 @@ website:
             href: philly.qmd
           - text: "Massachusetts"
             href: mass.qmd 
+          - text: "Las Vegas" 
+            href: lasvegas.qmd
           - text: "Lawrence"
             href: index.qmd
             
