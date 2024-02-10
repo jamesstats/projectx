@@ -1,0 +1,18 @@
+---
+title: "Latino Voters"
+editor: visual
+---
+
+A look at Winchester and Sunrise Manor, two areas in Eastern part of Las Vegas and have a majority Latino population higher than the state. Obama 2012 did the best and Donald Trump improved from Romney 2012 meaning Clinton and Biden slipped.
+
+## Barack Obama vs Mitt Romney
+
+![](images/Obama_wincmanor.png){fig-align="center"}
+
+## Hillary Clinton vs Donald Trump
+
+![](images/clinto_wincmanor.png){fig-align="center"}
+
+## Joe Biden vs Donald Trump
+
+![](images/biden_wincmanor.png){fig-align="center"}
