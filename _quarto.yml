@@ -4,16 +4,19 @@ project:
 
 website:
   search: True 
-  reader-mode: true 
+  reader-mode: False  
   back-to-top-navigation: true 
   page-footer: 
     center: "Copyright 2024, Jamesstats"
     right: 
+      - icon: home
+        href: index.qmd 
       - icon: github
         href: https://github.com/jamesstats/projectx
       - icon: twitter
         href: https://twitter.com/james_polls
   sidebar:
+        
      
     - contents:
       - section: "Polls"
@@ -33,7 +36,8 @@ website:
           - text: "Las Vegas" 
             href: lasvegas.qmd
           - text: "Lawrence"
-            href: index.qmd
+            href: lawrence.qmd 
+           
             
 format:
   html:
