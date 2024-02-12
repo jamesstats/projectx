@@ -5,10 +5,10 @@ editor: visual
 
 Congresswoman Rashida Tlaib from Detroit, Michigan visualization of her strong 2023 fundraising locally and nationally that brought in more than \$3 million.
 
-## Michigan 
+## Michigan
 
 ![](images/tlaibMI_projectx.png){fig-align="center"}
 
 ## Nation
 
-![](images/tlaibUS_projectx.png){fig-align="center"}
+![](images/9613x-congresswoman-rashida-tlaib-.png){fig-align="center"}
