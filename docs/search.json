@@ -30,9 +30,9 @@
   {
     "objectID": "mass.html",
     "href": "mass.html",
-    "title": "",
+    "title": "Population Change",
     "section": "",
-    "text": "From 1990 to 2000, the eastern part of the state gained while the central to the west lost population. The City of Boston gained the by adding over 14,000 people while the town of Harvard(not the school) lost more than 6,000 people.\n\n\n\n\n\n\n\n\n\n\n\nFor the second decade in a row, the City of Boston gained population, it gained almost 28,000 people and the town of Braintree lost the most with about 3,000 people leaving. Overall, the eastern part of the state fared well with lower population increase and the central to west didn’t lose too many people.\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
+    "text": "Interactive maps of Massachusetts population change from 1980 to 2010."
   },
   {
     "objectID": "pres2020.html",
@@ -124,5 +124,26 @@
     "title": "",
     "section": "2020",
     "text": "2020"
+  },
+  {
+    "objectID": "mass.html#to-1990",
+    "href": "mass.html#to-1990",
+    "title": "Population Change",
+    "section": "1980 to 1990",
+    "text": "1980 to 1990"
+  },
+  {
+    "objectID": "mass.html#to-2000",
+    "href": "mass.html#to-2000",
+    "title": "Population Change",
+    "section": "1990 to 2000",
+    "text": "1990 to 2000"
+  },
+  {
+    "objectID": "mass.html#to-2010",
+    "href": "mass.html#to-2010",
+    "title": "Population Change",
+    "section": "2000 to 2010",
+    "text": "2000 to 2010\n\n\n\n\n\n\n\nThe data and shapefile are from Massachusetts GIS Townssurvey and Census."
   }
 ]
