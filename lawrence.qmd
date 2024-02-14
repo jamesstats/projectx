@@ -5,6 +5,10 @@ format: html
 
 A look at presidential elections performance from 2012 to 2020 in this majority Latino city of Lawrence in the state of Massachusetts.
 
+## Maps of the three candidates.
+
 ![](images/citylawrence.png){fig-align="center"}
 
-<p>.The city is also the poorest in the state located in the north east bordering Salem, New Hampshire. Obama'12 received `83%` of the vote, Clinton '16 received `81%` with 1,000 more votes and Biden'20 did very poorly getting only 73% from Trump improvement with Latino voters.</p>
+## The three candidates and the precincts they won.
+
+![](images/lawrence.svg){fig-align="center"}
