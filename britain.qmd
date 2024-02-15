@@ -7,12 +7,14 @@ A compilation of polls for the next U.K general election.
 
 ```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 library(ggplot2)
+library(lubridate) 
 library(zoo)
 library(dplyr)
 library(readxl) 
 
 greatbritain <- read_excel("~/Documents/elections_files/greatbritain.xlsx")
-
+greatbritain$end_date <- as.Date(paste(greatbritain$end_date, 1, sep="-"), format="%Y-%m-%d") 
+greatbritain<-as.data.frame(greatbritain)  
 ggplot(greatbritain, mapping = aes(x=end_date, y=Share, color=Party))+
   geom_point(alpha=1/20, size=5)+
   geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=2)+
@@ -20,6 +22,7 @@ ggplot(greatbritain, mapping = aes(x=end_date, y=Share, color=Party))+
   theme_bw()+
   labs(title = 'Westminster Voting Intention',caption = 'source::britainelects\njamesstats.github.io/projectx',
        x='',y='',color='')+
+  scale_x_date(breaks = "7 days")+  
   theme(legend.position = 'bottom',plot.title = element_text(face = 'bold'),
         plot.caption = element_text(face = 'italic', size = 10)) 
 
