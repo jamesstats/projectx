@@ -1,0 +1,148 @@
+---
+title: ""
+editor: visual
+---
+
+## Wisconsin
+
+### Biden vs Trump
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
+
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(lubridate) 
+swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
+    sheet = "WI")
+h2hWI<-swingstates%>%
+  filter(TYPE == "h_2_h") 
+# plot 
+ggplot(h2hWI, mapping = aes(x=end_date, y=pct, color=answer))+
+  geom_point(alpha=1/20, size=5) +
+    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
+  scale_colour_manual(values = c('#0099ff','#ff6666')) +
+  labs(title = "President:General Election - Wisconsin 2024",color="",x="",y="",
+       caption = "source::538.com\njamesstats.github.io/projectx")+
+  theme_bw() +
+  theme(legend.position = 'bottom')  
+```
+
+### Biden vs Trump and Third Parties
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
+
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(lubridate) 
+swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
+    sheet = "WI")
+thirdWI<-swingstates%>%
+  filter(TYPE == "multi") 
+# plot 
+ggplot(thirdWI, mapping = aes(x=end_date, y=pct, color=answer))+
+  geom_point(alpha=1/20, size=5) +
+    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
+  scale_colour_manual(values = c('#0099ff',"yellow","green", '#ff6666',"purple")) +
+  labs(title = "President:General Election - Wisconsin 2024(Third Parties)",color="",x="",y="",
+       caption = "source::538.com\njamesstats.github.io/projectx")+
+  theme_bw() +
+  theme(legend.position = 'bottom')  
+```
+
+## Pennsylvania
+
+### Biden vs Trump
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
+
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(lubridate) 
+swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
+    sheet = "PA")
+h2h<-swingstates%>%
+  filter(TYPE == "h_2_h") 
+# plot 
+ggplot(h2h, mapping = aes(x=end_date, y=pct, color=answer))+
+  geom_point(alpha=1/20, size=5) +
+    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
+  scale_colour_manual(values = c('#0099ff','#ff6666')) +
+  labs(title = "President:General Election - Pennsylvania 2024",color="",x="",y="",
+       caption = "source::538.com\njamesstats.github.io/projectx")+
+  theme_bw() +
+  theme(legend.position = 'bottom')  
+```
+
+### Biden vs Trump and Third Parties
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
+
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(lubridate) 
+swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
+    sheet = "PA")
+third<-swingstates%>%
+  filter(TYPE == "multi") 
+# plot 
+ggplot(third, mapping = aes(x=end_date, y=pct, color=answer))+
+  geom_point(alpha=1/20, size=5) +
+    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
+  scale_colour_manual(values = c('#0099ff',"yellow","green", '#ff6666',"purple")) +
+  labs(title = "President:General Election - Pennsylvania 2024(Third Parties)",color="",x="",y="",
+       caption = "source::538.com\njamesstats.github.io/projectx")+
+  theme_bw() +
+  theme(legend.position = 'bottom')  
+```
+
+## Michigan
+
+### Biden vs Trump
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
+
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(lubridate) 
+swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
+    sheet = "MI")
+h2hMI<-swingstates%>%
+  filter(TYPE == "h_2_h") 
+# plot 
+ggplot(h2hMI, mapping = aes(x=end_date, y=pct, color=answer))+
+  geom_point(alpha=1/20, size=5) +
+    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
+  scale_colour_manual(values = c('#0099ff','#ff6666')) +
+  labs(title = "President:General Election - Michigan 2024",color="",x="",y="",
+       caption = "source::538.com\njamesstats.github.io/projectx")+
+  theme_bw() +
+  theme(legend.position = 'bottom')  
+```
+
+### Biden vs Trump and Third Parties
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
+
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(lubridate) 
+swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
+    sheet = "MI")
+thirdMI<-swingstates%>%
+  filter(TYPE == "multi") 
+# plot 
+ggplot(thirdMI, mapping = aes(x=end_date, y=pct, color=answer))+
+  geom_point(alpha=1/20, size=5) +
+    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
+  scale_colour_manual(values = c('#0099ff',"yellow","green", '#ff6666',"purple")) +
+  labs(title = "President:General Election - Michigan 2024(Third Parties)",color="",x="",y="",
+       caption = "source::538.com\njamesstats.github.io/projectx")+
+  theme_bw() +
+  theme(legend.position = 'bottom') 
+```
