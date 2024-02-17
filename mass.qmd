@@ -23,7 +23,7 @@ Interactive maps of Massachusetts population change from 1980 to 2010.
 <noscript><img src="https://datawrapper.dwcdn.net/qmW6O/full.png"/></noscript>
 :::
 
-## 2000 to 2010 
+## 2000 to 2010
 
 ::: {style="min-height:501px"}
 ```{=html}
@@ -31,7 +31,5 @@ Interactive maps of Massachusetts population change from 1980 to 2010.
 ```
 <noscript><img src="https://datawrapper.dwcdn.net/W1XlQ/full.png"/></noscript>
 :::
-
-` `{=html}
 
 *The data and shapefile are from Massachusetts GIS Townssurvey and Census.*
