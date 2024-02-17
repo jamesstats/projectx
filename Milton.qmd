@@ -1,0 +1,10 @@
+---
+title: ""
+editor: visual
+---
+
+How the affluent Town of Milton voted on a ballot question for building multi-family homes in a accordance to zoning law passed by the state legislature. Voters rejected the zoning law by 8%. The NO vote came mainly from high income white parts of the town which is 70% white.
+
+## Map
+
+![](images/milton_projectx.svg){fig-align="center"}
