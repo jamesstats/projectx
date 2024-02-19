@@ -1,0 +1,52 @@
+---
+title: ""
+editor: visual
+---
+
+## Round Two!
+
+2024 national polling from beginning of October between Biden and Trump and third parties candidates included. The third party candidates(*Kennedy*,*West* and *Stein*) seems to take away support from Biden and Trump.
+
+```{r,bidenvtrump,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
+library(readxl)
+library(zoo)
+library(dplyr)
+library(ggplot2) 
+library(extrafont) 
+#fetching the data
+us2024<-read_excel("~/Documents/elections_files/ge2024.xlsx") 
+plmean <- us2024 %>%
+  dplyr::arrange(desc(candidates)) %>% 
+  dplyr::group_by(candidates) %>% 
+  dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 4, fill = NA),
+                pct_03da = zoo::rollmean(pct, k = 6, fill = NA),
+                pct_05da = zoo::rollmean(pct, k = 8, fill = NA),
+                pct_21da = zoo::rollmean(pct, k = 10, fill = NA)) %>% 
+  dplyr::ungroup()  
+#changing the labels for the facets
+plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
+                  labels = c("Biden vs Trump", "Biden vs Trump with Third Parties")
+                  )
+#plot
+ggplot(plmean,aes(x=end_date, y=pct_02da, color=candidates))+
+  geom_jitter()+
+    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=2)+
+labs(x="",y="",color="",caption = "source::538.com(4-day WMA)AtlasIntel,CBS,Civiqs,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,NBCNews,NYT/Siena,TippInsights,USAToday,Zogby\njamesstats.github.io/projectx")+
+    scale_colour_manual(values = c('#0099ff', '#ff6666'))+
+  scale_y_continuous(limits = c(min(30),max(50)))+ 
+  theme_bw()+
+  theme(legend.position = 'none',strip.text.x = element_text(size = 12, color = "black", face = "bold.italic",family = "Andale Mono"),strip.text.y = element_text(size = 8,
+        color = "black", face ="bold.italic",family = "Andale Mono"),strip.background = element_rect(color="black", fill="white", size=0.5, linetype="solid"
+     ),plot.caption = element_text(face = "bold.italic",family = "Andale Mono"))+ 
+  facet_wrap(~type,nrow = 2)     
+
+```
+
+## Polling averages
+
+| End_date     | Candidates | Head to Head | with Third Parties |
+|:-------------|:-----------|:------------:|:------------------:|
+| Feb 14, 2024 | **Biden**  |    45.3%     |       38.8%        |
+| Feb 14, 2024 | **Trump**  |    47.5%     |       41.3%        |
+
+*Used 4-Day weighted moving average(WMA) to aggregate the average of the polls.*
