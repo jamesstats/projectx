@@ -5,57 +5,44 @@ editor: visual
 
 ## Wisconsin
 
-### Biden vs Trump
-
 ```{r,wisconsin,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
 library(extrafont)
 library(readxl)
 library(ggplot2)
 library(dplyr)
 library(lubridate) 
-swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
-    sheet = "WI")
-h2hWI<-swingstates%>%
-  filter(TYPE == "h_2_h") 
+WI_H2H <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
+    sheet = "WI_H2H")
+#mean of the polls
+wimean <- WI_H2H %>%
+  dplyr::arrange(desc(party)) %>% 
+  dplyr::group_by(answer) %>% 
+  dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
+                pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
+                pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
+                pct_08da = zoo::rollmean(pct, k = 8, fill = NA),
+                pct_10da = zoo::rollmean(pct, k = 10, fill = NA)) %>% 
+  dplyr::ungroup()  
+#changing the labels for the facets
+wimean$TYPE <- factor(wimean$TYPE, levels = c("h_2_h", "multi"),
+                  labels = c("Biden vs Trump", "Biden vs Trump with Third Parties")
+                  )  
 # plot 
-ggplot(h2hWI, mapping = aes(x=end_date, y=pct, color=answer))+
-  geom_point(alpha=1/20, size=5) +
+ggplot(wimean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
+  geom_jitter() +
     geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
   scale_colour_manual(values = c('#0099ff','#ff6666')) +
   labs(title = "President:General Election - Wisconsin 2024",color="",x="",y="",
        caption = "source::538.com\njamesstats.github.io/projectx")+
   theme_bw() +
-  theme(legend.position = 'bottom',plot.title = element_text(family = 'AppleMyungjo',face = 'bold'),
-        plot.caption = element_text(family = 'AppleMyungjo',face = 'italic'))   
-```
-
-### Biden vs Trump and Third Parties
-
-```{r,wisconsin_3rd_Party,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
-library(extrafont) 
-library(readxl)
-library(ggplot2)
-library(dplyr)
-library(lubridate) 
-swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
-    sheet = "WI")
-thirdWI<-swingstates%>%
-  filter(TYPE == "multi") 
-# plot 
-ggplot(thirdWI, mapping = aes(x=end_date, y=pct, color=answer))+
-  geom_point(alpha=1/20, size=5) +
-    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
-  scale_colour_manual(values = c('#0099ff',"yellow","green", '#ff6666',"purple")) +
-  labs(title = "President:General Election - Wisconsin 2024(Third Parties)",color="",x="",y="",
-       caption = "source::538.com\njamesstats.github.io/projectx")+
-  theme_bw() +
-  theme(legend.position = 'bottom',plot.title = element_text(family = 'AppleMyungjo',face = 'bold'),
-        plot.caption = element_text(family = 'AppleMyungjo',face = 'italic')) 
+  theme(legend.position = 'none',plot.caption = element_text(family = 'Andale Mono',face = 'italic'),
+        strip.text.x = element_text(size = 12, color = "black", face = "bold.italic",family = "Andale Mono"),strip.text.y = element_text(size = 8,
+        color = "black", face ="bold.italic",family = "Andale Mono"),strip.background = element_rect(color="black", fill="white", size=0.5, linetype="solid"
+     ),plot.title = element_text(family = "Andale Mono",face = "bold"))+ 
+  facet_wrap(~TYPE, nrow = 2) 
 ```
 
 ## Pennsylvania
-
-### Biden vs Trump
 
 ```{r,pennsylvania,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
 
@@ -65,62 +52,44 @@ library(tidyverse)
 library(extrafont) 
 library(dplyr)
 library(lubridate) 
-swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
-    sheet = "PA")
-h2h<-swingstates%>%
-  filter(TYPE == "h_2_h") 
+paH2H <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
+    sheet = "PA_H2H")
 #sma
-h2hsma <- h2h %>%
+pamean <- paH2H %>%
   dplyr::arrange(desc(answer)) %>% 
   dplyr::group_by(answer) %>% 
   dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
-                pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
-                pct_05da = zoo::rollmean(pct, k = 5, fill = NA),
-                pct_07da = zoo::rollmean(pct, k = 7, fill = NA),
-                pct_15da = zoo::rollmean(pct, k = 15, fill = NA),
-                pct_21da = zoo::rollmean(pct, k = 21, fill = NA)) %>% 
+                pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
+                pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
+                pct_08da = zoo::rollmean(pct, k = 8, fill = NA),
+                pct_10da = zoo::rollmean(pct, k = 10, fill = NA),
+                pct_12da = zoo::rollmean(pct, k = 12, fill = NA)) %>% 
   dplyr::ungroup() 
+#changing the labels for the facets
+pamean$TYPE <- factor(pamean$TYPE, levels = c("h_2_h", "multi"),
+                  labels = c("Biden vs Trump", "Biden vs Trump with Third Parties")
+                  )  
 # plot 
-ggplot(h2hsma, mapping = aes(x=end_date, y=pct_05da, color=answer))+
-  geom_point(alpha=1/20, size=5) +
+ggplot(pamean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
+  geom_jitter()+
     geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
   scale_colour_manual(values = c('#0099ff','#ff6666')) +
-  labs(title = "President:General Election - Pennsylvania 2024",color="",x="",y="",
+  scale_y_continuous(limits = c(min(30),max(50)))+
+  labs(color="",x="",y="",title = "President:General Election - Pennsylvania 2024",
        caption = "source::538.com\njamesstats.github.io/projectx")+
-  theme_bw() +
-  theme(legend.position = 'bottom',plot.title = element_text(family = 'AppleMyungjo',face = 'bold'),
-        plot.caption = element_text(family = 'AppleMyungjo',face = 'italic')) 
- 
+  theme_bw()+
+  theme(legend.position = 'none',plot.caption = element_text(family = 'Andale Mono',face = 'italic'),
+        strip.text.x = element_text(size = 12, color = "black", face = "bold.italic",family = "Andale Mono"),strip.text.y = element_text(size = 8,
+        color = "black", face ="bold.italic",family = "Andale Mono"),strip.background = element_rect(color="black", fill="white", size=0.5, linetype="solid"
+     ),plot.title = element_text(family = "Andale Mono",face = "bold"))+ 
+  facet_wrap(~TYPE, nrow = 2)  
+
+  
 ```
 
-### Biden vs Trump and Third Parties
-
-```{r,pennsylvani_3rd_Party,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
-
-library(readxl)
-library(extrafont) 
-library(ggplot2)
-library(dplyr)
-library(lubridate) 
-swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
-    sheet = "PA")
-third<-swingstates%>%
-  filter(TYPE == "multi") 
-# plot 
-ggplot(third, mapping = aes(x=end_date, y=pct, color=answer))+
-  geom_point(alpha=1/20, size=5) +
-    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
-  scale_colour_manual(values = c('#0099ff',"yellow","green", '#ff6666',"purple")) +
-  labs(title = "President:General Election - Pennsylvania 2024(Third Parties)",color="",x="",y="",
-       caption = "source::538.com\njamesstats.github.io/projectx")+
-  theme_bw() +
-  theme(legend.position = 'bottom',plot.title = element_text(family = 'AppleMyungjo',face = 'bold'),
-        plot.caption = element_text(family = 'AppleMyungjo',face = 'italic'))   
-```
+### 
 
 ## Michigan
-
-### Biden vs Trump
 
 ```{r,michigan,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
 
@@ -129,56 +98,35 @@ library(extrafont)
 library(ggplot2)
 library(dplyr)
 library(lubridate) 
-swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
-    sheet = "MI")
-h2hMI<-swingstates%>%
-  filter(TYPE == "h_2_h") 
+miH2H <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
+    sheet = "MI_H2H")
 #sma
-h2hMIsma <- h2hMI %>%
+mimean <- miH2H %>%
   dplyr::arrange(desc(answer)) %>% 
   dplyr::group_by(answer) %>% 
   dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
-                pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
-                pct_05da = zoo::rollmean(pct, k = 5, fill = NA),
-                pct_07da = zoo::rollmean(pct, k = 7, fill = NA),
-                pct_15da = zoo::rollmean(pct, k = 15, fill = NA),
-                pct_21da = zoo::rollmean(pct, k = 21, fill = NA)) %>% 
+                pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
+                pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
+                pct_08da = zoo::rollmean(pct, k = 8, fill = NA),
+                pct_10da = zoo::rollmean(pct, k = 10, fill = NA),
+                pct_10da = zoo::rollmean(pct, k = 12, fill = NA)) %>% 
   dplyr::ungroup() 
+#renaming the labels
+mimean$TYPE <- factor(mimean$TYPE, levels = c("h_2_h", "multi"),
+                  labels = c("Biden vs Trump", "Biden vs Trump with Third Parties")
+                  )  
 # plot 
-ggplot(h2hMIsma, mapping = aes(x=end_date, y=pct_02da, color=answer))+
-  geom_point(alpha=1/20, size=5) +
+ggplot(mimean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
+  geom_jitter() +
     geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
   scale_colour_manual(values = c('#0099ff','#ff6666')) +
+  scale_y_continuous(limits = c(min(30),max(50)))+
   labs(title = "President:General Election - Michigan 2024",color="",x="",y="",
        caption = "source::538.com\njamesstats.github.io/projectx")+
   theme_bw() +
-  theme(legend.position = 'bottom',plot.title = element_text(family = 'AppleMyungjo',face = 'bold'),
-        plot.caption = element_text(family = 'AppleMyungjo',face = 'italic'))  
-```
-
-### Biden vs Trump and Third Parties
-
-```{r,michigan_3rd_Party,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
-
-library(readxl)
-library(extrafont) 
-library(ggplot2)
-library(dplyr)
-library(lubridate) 
-swingstates <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
-    sheet = "MI")
-thirdMI<-swingstates%>%
-  filter(TYPE == "multi") 
-# plot 
-ggplot(thirdMI)+
-  geom_line(mapping = aes(x=end_date, y=pct, color=answer),lwd=1.5) +
- 
-    
-   scale_colour_manual(values = c('#0099ff',"yellow","green", '#ff6666',"purple")) +
-   
-  labs(title = "President:General Election - Michigan 2024(Third Parties)",color="",x="",y="",
-       caption = "source::538.com\njamesstats.github.io/projectx")+
-  theme_bw() +
-  theme(legend.position = 'bottom',plot.title = element_text(family = 'AppleMyungjo',face = 'bold'),
-        plot.caption = element_text(family = 'AppleMyungjo',face = 'italic')) 
+  theme(legend.position = 'none',plot.title = element_text(family = 'Andale Mono',face = 'bold'),
+        plot.caption = element_text(family = 'Andale Mono',face = 'italic'),
+        strip.text.x = element_text(size = 12, color = "black", face = "bold.italic",family = "Andale Mono"),strip.text.y = element_text(size = 8,
+        color = "black", face ="bold.italic",family = "Andale Mono"),strip.background = element_rect(color="black", fill="white", size=0.5, linetype="solid"))+ 
+  facet_wrap(~TYPE, nrow = 2) 
 ```
