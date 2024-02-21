@@ -4,3 +4,12 @@ editor: visual
 ---
 
 Welcome to my website!
+
+-   [2024 national Polls](https://jamesstats.github.io/projectx/US2024.html "2024 National Polls")
+
+```{=html}
+<!-- -->
+```
+-   [Swing States](https://jamesstats.github.io/projectx/mipawi.html "Swing States")
+
+-   [2020 National Polls](https://jamesstats.github.io/projectx/prestwozero.html "2020 National Polls")

@@ -17,13 +17,15 @@ greatbritain$end_date <- as.Date(paste(greatbritain$end_date, 1, sep="-"), forma
 greatbritain<-as.data.frame(greatbritain)  
 ggplot(greatbritain, mapping = aes(x=end_date, y=Share, color=Party))+
   geom_point(alpha=1/20, size=5)+
-  geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=2)+
+  geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
   scale_colour_manual(values = c('blue','green','tomato',"gold","cyan","yellow"))+
+   
   theme_bw()+
   labs(title = 'Westminster Voting Intention',caption = 'source::britainelects\njamesstats.github.io/projectx',
        x='',y='',color='')+
-  scale_x_date(breaks = "7 days")+  
-  theme(legend.position = 'bottom',plot.title = element_text(face = 'bold'),
-        plot.caption = element_text(face = 'italic', size = 10)) 
+  scale_x_date(breaks = "9 days")+  
+  theme(legend.position = 'bottom',plot.title = element_text(family = "Andale Mono"),
+        plot.caption = element_text(face = 'italic',family = "Andale Mono", size = 10),
+        axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold")) 
 
 ```
