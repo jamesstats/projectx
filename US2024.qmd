@@ -18,20 +18,21 @@ us2024<-read_excel("~/Documents/elections_files/ge2024.xlsx")
 plmean <- us2024 %>%
   dplyr::arrange(desc(candidates)) %>% 
   dplyr::group_by(candidates) %>% 
-  dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 4, fill = NA),
-                pct_03da = zoo::rollmean(pct, k = 6, fill = NA),
-                pct_05da = zoo::rollmean(pct, k = 8, fill = NA),
-                pct_21da = zoo::rollmean(pct, k = 10, fill = NA)) %>% 
+  dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
+                pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
+                pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
+                pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
+                pct_10da = zoo::rollmean(pct, k = 8, fill = NA)) %>% 
   dplyr::ungroup()  
 #changing the labels for the facets
 plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
                   labels = c("Biden vs Trump", "Biden vs Trump with Third Parties")
                   )
 #plot
-ggplot(plmean,aes(x=end_date, y=pct_02da, color=candidates))+
+ggplot(plmean,aes(x=end_date, y=pct_03da, color=candidates))+
   geom_jitter()+
     geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=2)+
-labs(x="",y="",color="",caption = "source::538.com(4-day WMA)AtlasIntel,CBS,Civiqs,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,NBCNews,NYT/Siena,TippInsights,USAToday,Zogby\njamesstats.github.io/projectx")+
+labs(x="",y="",color="",caption = "source::538.com(4-day WMA)AtlasIntel,CBS,Civiqs,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Zogby\njamesstats.github.io/projectx")+
     scale_colour_manual(values = c('#0099ff', '#ff6666'))+
   scale_y_continuous(limits = c(min(30),max(50)))+ 
   theme_bw()+
@@ -42,11 +43,11 @@ labs(x="",y="",color="",caption = "source::538.com(4-day WMA)AtlasIntel,CBS,Civi
 
 ```
 
-## Polling averages
+## Polling Averages
 
-| End_date     | Candidates | Head to Head | with Third Parties |
+| End Date     | Candidates | Head to Head | with Third Parties |
 |:-------------|:-----------|:------------:|:------------------:|
-| Feb 14, 2024 | **Biden**  |    45.3%     |       38.8%        |
-| Feb 14, 2024 | **Trump**  |    47.5%     |       41.3%        |
+| Feb 19, 2024 | **Biden**  |    42.3%     |        46%         |
+| Feb 19, 2024 | **Trump**  |    41.6%     |       46.3%        |
 
-*Used 4-Day weighted moving average(WMA) to aggregate the average of the polls.*
+*Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
