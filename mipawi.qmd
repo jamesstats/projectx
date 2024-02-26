@@ -98,6 +98,7 @@ library(extrafont)
 library(ggplot2)
 library(dplyr)
 library(lubridate) 
+#fetching the data
 miH2H <- read_excel("~/Documents/elections_files/swingstates.xlsx", 
     sheet = "MI_H2H")
 #sma
