@@ -18,6 +18,7 @@ wimean <- WI_H2H %>%
   dplyr::arrange(desc(party)) %>% 
   dplyr::group_by(answer) %>% 
   dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
+                pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
                 pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
                 pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
                 pct_08da = zoo::rollmean(pct, k = 8, fill = NA),
@@ -106,6 +107,7 @@ mimean <- miH2H %>%
   dplyr::arrange(desc(answer)) %>% 
   dplyr::group_by(answer) %>% 
   dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
+                pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
                 pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
                 pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
                 pct_08da = zoo::rollmean(pct, k = 8, fill = NA),

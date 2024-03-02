@@ -3,8 +3,6 @@ title: ""
 format: html
 ---
 
-A compilation of polls for the next U.K general election.
-
 ```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 library(ggplot2)
 library(lubridate) 
@@ -38,3 +36,12 @@ ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
         axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold")) 
 
 ```
+
+## Averages:
+
+| End_Date    | Con   | Lab | Lib Dem | SNP  | Green | Reform |
+|-------------|-------|-----|:--------|------|-------|--------|
+| Feb 26.2024 | 23.5% | 45% | 9.3%    | 3.3% | 5.5%  | 10.8%  |
+|             |       |     |         |      |       |        |
+
+*Used 2-Day weighted moving average(WMA) to aggregate the average of the voting intention polls.*

@@ -47,7 +47,7 @@ labs(x="",y="",color="",caption = "source::538.com(4-day WMA)AtlasIntel,CBS,Civi
 
 | End Date     | Candidates | Head to Head | with Third Parties |
 |:-------------|:-----------|:------------:|:------------------:|
-| Feb 19, 2024 | **Biden**  |    42.3%     |        46%         |
-| Feb 19, 2024 | **Trump**  |    41.6%     |       46.3%        |
+| Feb 28, 2024 | **Biden**  |    42.3%     |       43.3%        |
+| Feb 28, 2024 | **Trump**  |    41.7%     |       43.3%        |
 
 *Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
