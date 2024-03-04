@@ -5,7 +5,7 @@ editor: visual
 
 ## Round Two!
 
-2024 national polling from beginning of October between Biden and Trump and third parties candidates included. The third party candidates(*Kennedy*,*West* and *Stein*) seems to take away support from Biden and Trump.
+2024 national polling from beginning of October between Biden and Trump with third parties candidates included.
 
 ```{r,bidenvtrump,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
 library(readxl)
@@ -32,7 +32,7 @@ plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
 ggplot(plmean,aes(x=end_date, y=pct_03da, color=candidates))+
   geom_jitter()+
     geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=2)+
-labs(x="",y="",color="",caption = "source::538.com(4-day WMA)AtlasIntel,CBS,Civiqs,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Zogby\njamesstats.github.io/projectx")+
+labs(x="",y="",color="",caption = "source::538.com(3-day WMA)AtlasIntel,CBS,Civiqs,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Zogby\njamesstats.github.io/projectx")+
     scale_colour_manual(values = c('#0099ff', '#ff6666'))+
   scale_y_continuous(limits = c(min(30),max(50)))+ 
   theme_bw()+
@@ -47,7 +47,7 @@ labs(x="",y="",color="",caption = "source::538.com(4-day WMA)AtlasIntel,CBS,Civi
 
 | End Date     | Candidates | Head to Head | with Third Parties |
 |:-------------|:-----------|:------------:|:------------------:|
-| Feb 28, 2024 | **Biden**  |    42.3%     |       43.3%        |
-| Feb 28, 2024 | **Trump**  |    41.7%     |       43.3%        |
+| Feb 28, 2024 | **Biden**  |     43%      |       42.7%        |
+| Feb 28, 2024 | **Trump**  |     47%      |        46%         |
 
 *Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
