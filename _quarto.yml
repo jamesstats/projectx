@@ -23,11 +23,11 @@ website:
         contents:
           - text: "2024 Nationa Polls"
             href: US2024.qmd 
-          - text: "Swing States"
+          - text: "2024 Swing States"
             href: mipawi.qmd
-          - text: "Westminister"
+          - text: "Westminister Polls"
             href: britain.qmd  
-          - text: "2020 Polls"
+          - text: "2020 National Polls"
             href: prestwozero.qmd
       - section: "MAPS"
         contents: 
