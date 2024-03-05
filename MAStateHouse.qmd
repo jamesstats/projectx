@@ -1,0 +1,20 @@
+---
+title: ""
+editor: visual
+---
+
+### Seats that flipped overview in the red wave of 2010
+
+![](images/maseats.svg){fig-align="center"}
+
+### Every vote counts!
+
+![](images/6thWorcesterX.png){fig-align="center"}
+
+### Closer look at Worcester County
+
+![](images/seatprojectxsvg.svg){fig-align="center"}
+
+### Closer look at Bristol and Plymouth Counties
+
+![](images/bristol_plymouthReddit.png){fig-align="center"}
