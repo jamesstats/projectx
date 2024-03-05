@@ -18,7 +18,9 @@ us2024<-read_excel("~/Documents/elections_files/ge2024.xlsx")
 plmean <- us2024 %>%
   dplyr::arrange(desc(candidates)) %>% 
   dplyr::group_by(candidates) %>% 
-  dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
+  dplyr::mutate(
+                pct_01da = zoo::rollmean(pct, k = 1, fill = NA),
+                pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
                 pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
                 pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
                 pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
@@ -47,7 +49,7 @@ labs(x="",y="",color="",caption = "source::538.com(3-day WMA)AtlasIntel,CBS,Civi
 
 | End Date     | Candidates | Head to Head | with Third Parties |
 |:-------------|:-----------|:------------:|:------------------:|
-| Feb 28, 2024 | **Biden**  |     43%      |       42.7%        |
-| Feb 28, 2024 | **Trump**  |     47%      |        46%         |
+| Feb 29, 2024 | **Biden**  |    41.3%     |        43%         |
+| Feb 29, 2024 | **Trump**  |    42.7%     |        44%         |
 
 *Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*

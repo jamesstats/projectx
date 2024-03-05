@@ -19,7 +19,7 @@ website:
         
      
     - contents:
-      - section: "Polls"
+      - section: "POLLS"
         contents:
           - text: "2024 Nationa Polls"
             href: US2024.qmd 
@@ -29,23 +29,20 @@ website:
             href: britain.qmd  
           - text: "2020 Polls"
             href: prestwozero.qmd
-      - section: "Maps"
+      - section: "MAPS"
         contents: 
           - text: "Philadelphia 08 vs 12"
             href: philly.qmd
-          - text: "Massachusetts"
-            href: mass.qmd 
-          - text: "Mass State House"
-            href: MAStateHouse.qmd
-          - text: "Town of Milton"
-            href: Milton.qmd
-          - text: "Rep.Tlaib"
-            href: tlaib.qmd
           - text: "Las Vegas" 
             href: lasvegas.qmd
+      - section: "Massachusetts"
+        contents: 
+          - text: "Population"
+            href: mass.qmd
+          - text: "State House"
+            href: MAStateHouse.qmd
           - text: "Lawrence"
-            href: lawrence.qmd 
-           
+            href: lawrence.qmd
             
 format:
   html:
