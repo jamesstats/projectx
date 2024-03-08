@@ -31,10 +31,10 @@ plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
                   labels = c("Biden vs Trump", "Biden vs Trump with Third Parties")
                   )
 #plot
-ggplot(plmean,aes(x=end_date, y=pct_03da, color=candidates))+
+ggplot(plmean,aes(x=end_date, y=pct_04da, color=candidates))+
   geom_jitter()+
     geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=2)+
-labs(x="",y="",color="",caption = "source::538.com(3-day WMA)AtlasIntel,CBS,Civiqs,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Zogby\njamesstats.github.io/projectx")+
+labs(x="",y="",color="",caption = "source::538.com(4-day WMA)AtlasIntel,CBS,Civiqs,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Zogby\njamesstats.github.io/projectx")+
     scale_colour_manual(values = c('#0099ff', '#ff6666'))+
   scale_y_continuous(limits = c(min(30),max(50)))+ 
   theme_bw()+
@@ -47,9 +47,9 @@ labs(x="",y="",color="",caption = "source::538.com(3-day WMA)AtlasIntel,CBS,Civi
 
 ## Polling Averages
 
-| End Date     | Candidates | Head to Head | with Third Parties |
-|:-------------|:-----------|:------------:|:------------------:|
-| Feb 29, 2024 | **Biden**  |    41.3%     |        43%         |
-| Feb 29, 2024 | **Trump**  |    42.7%     |        44%         |
+| EndDate     | Candidates | Head to Head | with Third Parties |
+|:------------|:-----------|:------------:|:------------------:|
+| Mar 2, 2024 | **Biden**  |     45%      |        44%         |
+| Mar 2, 2024 | **Trump**  |    46.8%     |        45%         |
 
-*Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
+*Used 4-Day weighted moving average(WMA) to aggregate the average of the polls.*

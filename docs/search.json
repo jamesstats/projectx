@@ -88,7 +88,7 @@
     "href": "US2024.html#polling-averages",
     "title": "",
     "section": "Polling Averages",
-    "text": "Polling Averages\n\n\n\nEnd Date\nCandidates\nHead to Head\nwith Third Parties\n\n\n\n\nFeb 29, 2024\nBiden\n41.3%\n43%\n\n\nFeb 29, 2024\nTrump\n42.7%\n44%\n\n\n\nUsed 3-Day weighted moving average(WMA) to aggregate the average of the polls."
+    "text": "Polling Averages\n\n\n\nEndDate\nCandidates\nHead to Head\nwith Third Parties\n\n\n\n\nMar 2, 2024\nBiden\n45%\n44%\n\n\nMar 2, 2024\nTrump\n46.8%\n45%\n\n\n\nUsed 4-Day weighted moving average(WMA) to aggregate the average of the polls."
   },
   {
     "objectID": "mass.html",
@@ -200,7 +200,7 @@
     "href": "britain.html#averages",
     "title": "",
     "section": "Averages:",
-    "text": "Averages:\n\n\n\nEnd_Date\nCon\nLab\nLib Dem\nSNP\nGreen\nReform\n\n\n\n\nFeb 28.2024\n23.5%\n45.3%\n8.5%\n3.3%\n5.8%\n11.5%\n\n\n\n\n\n\n\n\n\n\n\n\nUsed 2-Day weighted moving average(WMA) to aggregate the average of the voting intention polls."
+    "text": "Averages:\n\n\n\nEnd_Date\nCon\nLab\nLib Dem\nSNP\nGreen\nReform\n\n\n\n\nMar 2.2024\n22.3%\n44.3%\n9.3%\n3%\n6.5%\n12.8%\n\n\nFeb 28.2024\n23.5%\n45.3%\n8.5%\n3.3%\n5.8%\n11.5%\n\n\n\nUsed 2-Day weighted moving average(WMA) to aggregate the average of the voting intention polls."
   },
   {
     "objectID": "MAStateHouse.html",
@@ -215,5 +215,12 @@
     "title": "Untitled",
     "section": "",
     "text": "Back to top"
+  },
+  {
+    "objectID": "britain.html#polling-averages",
+    "href": "britain.html#polling-averages",
+    "title": "",
+    "section": "Polling Averages",
+    "text": "Polling Averages\n\n\n\nEndDate\nCon\nLab\nLib Dem\nSNP\nGreen\nReform\n\n\n\n\nMar 2.2024\n22.3%\n44.3%\n9.3%\n3%\n6.5%\n12.8%\n\n\nFeb 28.2024\n23.5%\n45.3%\n8.5%\n3.3%\n5.8%\n11.5%\n\n\n\nUsed 2-Day weighted moving average(WMA) to aggregate the average of the polls."
   }
 ]

@@ -3,7 +3,7 @@ title: "2020 Presidential Election National Polls"
 editor: visual
 ---
 
-```{r,A_Polls, echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'} 
+```{r,A_Polls, echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
 library(readxl)
 library(zoo)
 library(dplyr)
@@ -96,7 +96,7 @@ labs(title = '2020 U.S Presidential Election National Polls',subtitle = 'Polls w
         plot.caption = element_text(face = 'italic',size = 8)) 
 ```
 
-```{r,No_Ratings, echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'} 
+```{r,No_Ratings, echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
 library(readxl) 
 library(zoo)
 library(dplyr)
@@ -126,4 +126,3 @@ labs(title = '2020 U.S Presidential Election National Polls',subtitle = 'Polls w
         plot.subtitle = element_text(face = 'italic', size = 10),
         plot.caption = element_text(face = 'italic',size = 8)) 
 ```
-
