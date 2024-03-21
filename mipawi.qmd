@@ -17,7 +17,8 @@ WI_H2H <- read_excel("~/Documents/elections_files/swingstates.xlsx",
 wimean <- WI_H2H %>%
   dplyr::arrange(desc(party)) %>% 
   dplyr::group_by(answer) %>% 
-  dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
+  dplyr::mutate(pct_01da = zoo::rollmean(pct, k = 1, fill = NA),
+                pct_02da =zoo::rollmean(pct, k =2, fill = NA),
                 pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
                 pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
                 pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
@@ -42,6 +43,13 @@ ggplot(wimean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
      ),plot.title = element_text(family = "Andale Mono",face = "bold"))+ 
   facet_wrap(~TYPE, nrow = 2) 
 ```
+
+| End Date      | Biden | Trump     | Ballot                 |
+|---------------|-------|-----------|------------------------|
+| March 18,2024 | 44%   | **47.5%** | **Head-to-Head**       |
+| March 18,2024 | 39.5% | **44%**   | with **Third-Parties** |
+
+*Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
 
 ## Pennsylvania
 
@@ -88,7 +96,12 @@ ggplot(pamean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
   
 ```
 
-### 
+| End Date      | Biden | Trump   | Ballot                 |
+|---------------|-------|---------|------------------------|
+| March 13,2024 | 45%   | **47%** | **Head-to-Head**       |
+| March 13,2024 | 44%   | **48%** | with **Third-Parties** |
+
+*Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
 
 ## Michigan
 
@@ -133,3 +146,10 @@ ggplot(mimean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
         color = "black", face ="bold.italic",family = "Andale Mono"),strip.background = element_rect(color="black", fill="white", size=0.5, linetype="solid"))+ 
   facet_wrap(~TYPE, nrow = 2) 
 ```
+
+| End Date      | Biden | Trump     | Ballot                 |
+|---------------|-------|-----------|------------------------|
+| March 18,2024 | 45.5% | **46.5%** | **Head-to-Head**       |
+| March 18,2024 | 42.5% | **45.5%** | with **Third-Parties** |
+
+*Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
