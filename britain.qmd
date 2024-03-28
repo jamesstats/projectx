@@ -41,7 +41,7 @@ ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
 
 | End Date    | Con   | Lab   | Lib Dem | SNP  | Greens | Reform |
 |-------------|-------|-------|:--------|------|--------|--------|
-| Mar 7.2024  | 24.5% | 43%   | 10.3%   | 2.5% | 5.5%   | 12.3%  |
+| Mar 15.2024 | 24.8% | 42.5% | 9.8%    | 3%   | 6%     | 12%    |
 | Feb 28.2024 | 23.5% | 45.3% | 8.5%    | 3.3% | 5.8%   | 11.5%  |
 
 *Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
