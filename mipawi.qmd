@@ -44,10 +44,10 @@ ggplot(wimean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
   facet_wrap(~TYPE, nrow = 2) 
 ```
 
-| End Date      | Biden | Trump     | Ballot                 |
-|---------------|-------|-----------|------------------------|
-| March 18,2024 | 44%   | **47.5%** | **Head-to-Head**       |
-| March 18,2024 | 39.5% | **44%**   | with **Third-Parties** |
+| End Date      | Biden | Trump   | Ballot                 |
+|---------------|-------|---------|------------------------|
+| March 21,2024 | 43.5% | **42%** | **Head-to-Head**       |
+| March 21,2024 | 44.5% | **45%** | with **Third-Parties** |
 
 *Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
 
@@ -68,11 +68,12 @@ pamean <- paH2H %>%
   dplyr::arrange(desc(answer)) %>% 
   dplyr::group_by(answer) %>% 
   dplyr::mutate(pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
+                pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
                 pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
                 pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
+                pct_07da = zoo::rollmean(pct, k = 7, fill = NA),
                 pct_08da = zoo::rollmean(pct, k = 8, fill = NA),
-                pct_10da = zoo::rollmean(pct, k = 10, fill = NA),
-                pct_12da = zoo::rollmean(pct, k = 12, fill = NA)) %>% 
+                pct_10da = zoo::rollmean(pct, k = 10, fill = NA)) %>% 
   dplyr::ungroup() 
 #changing the labels for the facets
 pamean$TYPE <- factor(pamean$TYPE, levels = c("h_2_h", "multi"),
@@ -96,10 +97,10 @@ ggplot(pamean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
   
 ```
 
-| End Date      | Biden | Trump   | Ballot                 |
-|---------------|-------|---------|------------------------|
-| March 13,2024 | 45%   | **47%** | **Head-to-Head**       |
-| March 13,2024 | 44%   | **48%** | with **Third-Parties** |
+| End Date      | Biden | Trump      | Ballot                 |
+|---------------|-------|------------|------------------------|
+| March 31,2024 | 45%   | 39**%**    | **Head-to-Head**       |
+| March 31,2024 | 43%   | 43.5**%**  | with **Third-Parties** |
 
 *Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
 
@@ -149,7 +150,7 @@ ggplot(mimean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
 
 | End Date      | Biden | Trump     | Ballot                 |
 |---------------|-------|-----------|------------------------|
-| March 18,2024 | 45.5% | **46.5%** | **Head-to-Head**       |
-| March 18,2024 | 42.5% | **45.5%** | with **Third-Parties** |
+| March 28,2024 | 42%   | **45.5%** | **Head-to-Head**       |
+| March 28,2024 | 42.5% | **45.5%** | with **Third-Parties** |
 
 *Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
