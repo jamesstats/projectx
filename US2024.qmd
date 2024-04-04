@@ -47,9 +47,9 @@ labs(x="",y="",color="",caption = "source::538.com(5-day WMA)AtlasIntel,CBS,Civi
 
 ## Polling Averages
 
-| End Date     | Biden |   Trump   |          Ballot          |
-|:-------------|:------|:---------:|:------------------------:|
-| Mar 21, 2024 | 43%   | **44.6%** |     **Head-to-Head**     |
-| Mar 21, 2024 | 41.6% |  **44%**  | *with* **Third-Parties** |
+| End Date     | Biden |  Trump  |          Ballot          |
+|:-------------|:------|:-------:|:------------------------:|
+| Mar 29, 2024 | 43%   | **44%** |     **Head-to-Head**     |
+| Mar 29, 2024 | 43.6% |  43.6%  | *with* **Third-Parties** |
 
 *Used 5-Day weighted moving average(WMA) to aggregate the average of the polls.*
