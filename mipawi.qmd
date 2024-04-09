@@ -97,10 +97,10 @@ ggplot(pamean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
   
 ```
 
-| End Date      | Biden | Trump      | Ballot                 |
-|---------------|-------|------------|------------------------|
-| March 31,2024 | 45%   | 39**%**    | **Head-to-Head**       |
-| March 31,2024 | 43%   | 43.5**%**  | with **Third-Parties** |
+| End Date      | Biden | Trump     | Ballot                 |
+|---------------|-------|-----------|------------------------|
+| March 31,2024 | 45%   | 39**%**   | **Head-to-Head**       |
+| March 31,2024 | 43%   | 43.5**%** | with **Third-Parties** |
 
 *Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
 
