@@ -26,6 +26,7 @@ plmean <- us2024 %>%
                 pct_05da = zoo::rollmean(pct, k = 5, fill = NA),
                 pct_08da = zoo::rollmean(pct, k = 8, fill = NA)) %>% 
   dplyr::ungroup()  
+
 #changing the labels for the facets
 plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
                   labels = c("Biden vs Trump", "Biden-Trump-Kennedy-West-Stein")
