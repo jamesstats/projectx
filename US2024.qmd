@@ -50,9 +50,9 @@ labs(x="",y="",color="",caption = "source::538.com(3-day WMA)AtlasIntel,CBS,Civi
 
 ## *Polling Averages*
 
-| End Date    | Biden | Trump | Kennedy |    Lead     |           Type           |
-|:------------|:-----:|:-----:|:-------:|:-----------:|:------------------------:|
-| Apr 5, 2024 |  41%  | 40.3% |         | +0.7% Biden |     **Head-to-Head**     |
-| Apr 5, 2024 |  42%  | 41.3% |   7%    | +0.7% Biden | *with* **Third-Parties** |
+| End Date     | Biden | Trump | Kennedy |    Lead     |           Type           |
+|:-------------|:-----:|:-----:|:-------:|:-----------:|:------------------------:|
+| Apr 17, 2024 | 42.7% |  44%  |         | +1.3% Trump |     **Head-to-Head**     |
+| Apr 17, 2024 | 46.7% |  48%  |   11%   | +1.3% Trump | *with* **Third-Parties** |
 
 *Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
