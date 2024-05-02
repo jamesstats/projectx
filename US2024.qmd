@@ -5,7 +5,7 @@ editor: visual
 
 ## Round Two!
 
-2024 national polling from beginning of October between Biden and Trump with third parties candidates included.
+2024 national polling beginning of October between Biden vs Trump and with third parties candidates included.
 
 ```{r,bidenvtrump,echo=FALSE, warning=FALSE,message=FALSE, fig.align='center'}
 library(readxl)
@@ -35,7 +35,7 @@ plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
 ggplot(plmean,aes(x=end_date, y=pct_03da, color=candidates))+
   geom_jitter()+
     geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=2)+
-labs(x="",y="",color="",caption = "source::538.com(3-day WMA)AtlasIntel,CBS,Civiqs,CNBC,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Zogby\njamesstats.github.io/projectx")+
+labs(x="",y="",color="",caption = "Source::538.COM(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CNN,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday\njamesstats.github.io/projectx")+
     scale_colour_manual(values = c('#0099ff','yellow','green', '#ff6666','purple'))+
   scale_y_continuous(limits = c(min(0),max(50)))+ 
   theme_bw()+
@@ -50,9 +50,9 @@ labs(x="",y="",color="",caption = "source::538.com(3-day WMA)AtlasIntel,CBS,Civi
 
 ## *Polling Averages*
 
-| End Date     | Biden | Trump | Kennedy |    Lead     |           Type           |
-|:-------------|:-----:|:-----:|:-------:|:-----------:|:------------------------:|
-| Apr 17, 2024 | 42.7% |  44%  |         | +1.3% Trump |     **Head-to-Head**     |
-| Apr 17, 2024 | 46.7% |  48%  |   11%   | +1.3% Trump | *with* **Third-Parties** |
+| End Date     | Biden | Trump | Kennedy |    Lead    |           Type           |
+|:-------------|:-----:|:-----:|:-------:|:----------:|:------------------------:|
+| Apr 25, 2024 |  46%  |  45%  |         | +1% Biden  |     **Head-to-Head**     |
+| Apr 25, 2024 |  42%  | 42.5% |   9%    | +.5% Trump | *with* **Third-Parties** |
 
 *Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
