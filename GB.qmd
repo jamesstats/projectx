@@ -1,0 +1,49 @@
+---
+title: ""
+format: html
+---
+
+```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+library(ggplot2)
+library(lubridate) 
+library(zoo)
+library(dplyr)
+library(readxl) 
+#data polls
+greatbritain <- read_excel("~/Documents/elections_files/greatbritain.xlsx")
+#weighted average
+gbmean <- greatbritain %>%
+  dplyr::arrange(desc(Party)) %>% 
+  dplyr::group_by(Party) %>% 
+  dplyr::mutate(pct_02da = zoo::rollmean(Share, k = 4, fill = NA),
+                pct_03da = zoo::rollmean(Share, k = 6, fill = NA),
+                pct_05da = zoo::rollmean(Share, k = 8, fill = NA),
+                pct_21da = zoo::rollmean(Share, k = 10, fill = NA)) %>% 
+  dplyr::ungroup() 
+#date format
+greatbritain$end_date <- as.Date(paste(greatbritain$end_date, 1, sep="-"), format="%Y-%m-%d") 
+greatbritain<-as.data.frame(greatbritain)
+#plot 
+ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
+  geom_jitter()+ 
+  geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
+  scale_colour_manual(values = c('#0099FF','green','tomato',"orange","cyan","yellow"))+
+  scale_y_continuous(limits = c(min(0),max(50)))+ 
+  theme_bw()+
+  labs(title = 'Westminster Voting Intention - GE2024',caption = 'Sources:BMG,DeltaPoll,Redfield&Wilton,PeoplePolling\nTeche,Opinum,Savanta,Survation,WeThink,MoreInCommon\nLord Ashcroft,JL Partners,YouGov\njamesstats.github.io/projectx/GB',x='',y='',color='')+
+  theme(legend.position = "right",plot.title = element_text(family = "Andale Mono"),
+        legend.text = element_text(face = 'bold',family = 'Andale Mono'),
+        plot.caption = element_text(face = 'italic',family = "Andale Mono", size = 10),
+        axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold"))   
+
+```
+
+## Polling Averages
+
+| End Date    |  Con  |     Lab     | Lib Dem | SNP  | Greens | Reform |
+|-------------|:-----:|:-----------:|:-------:|:----:|:------:|:------:|
+| May 16.2024 | 22.8% |   **45%**   |  9.3%   |  3%  |   7%   |  11%   |
+| Mar 31.2024 | 22.5% | ***43.5***% |  9.5%   |  3%  |  6.5%  | 13.3%  |
+| Feb 28.2024 | 23.5% | ***45.3***% |  8.5%   | 3.3% |  5.8%  | 11.5%  |
+
+*Used 2-Day weighted moving average(WMA) to aggregate the average the polls.*
