@@ -3,6 +3,8 @@ title: ""
 format: html
 ---
 
+The general election will be on 4th of July 2024. The polls used for the aggregate are all sponsored by news paper, radio, tv stations and conducted by major firms.
+
 ```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 library(ggplot2)
 library(lubridate) 
