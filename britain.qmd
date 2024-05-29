@@ -3,6 +3,8 @@ title: ""
 format: html
 ---
 
+The general election will be on 4th of July 2024. The polls used for the aggregate are all sponsored by news paper, radio, news channels and conducted by major firms.
+
 ```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 library(ggplot2)
 library(lubridate) 
@@ -42,7 +44,7 @@ ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
 
 | End Date    |  Con  |     Lab     | Lib Dem | SNP  | Greens | Reform |
 |-------------|:-----:|:-----------:|:-------:|:----:|:------:|:------:|
-| May 16.2024 | 22.8% |   **45%**   |  9.3%   |  3%  |   7%   |  11%   |
+| May 25.2024 | 24.5% |  **43.3%**  |  9.5%   | 2.8% |  6.3%  |  11%   |
 | Mar 31.2024 | 22.5% | ***43.5***% |  9.5%   |  3%  |  6.5%  | 13.3%  |
 | Feb 28.2024 | 23.5% | ***45.3***% |  8.5%   | 3.3% |  5.8%  | 11.5%  |
 
