@@ -33,8 +33,8 @@ plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
                   )
 #plot
 ggplot(plmean,aes(x=end_date, y=pct_03da, color=candidates))+
-  geom_jitter()+
-    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=2)+
+  geom_jitter(alpha=0.6)+
+    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
 labs(x="",y="",color="",caption = "Source::538.COM(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CNN,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Quinnipiac\njamesstats.github.io/projectx")+
     scale_colour_manual(values = c('#0099ff','yellow','green', '#ff6666','purple'))+
   scale_y_continuous(limits = c(min(0),max(50)))+ 
