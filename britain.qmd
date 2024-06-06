@@ -29,7 +29,7 @@ greatbritain<-as.data.frame(greatbritain)
 ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
   geom_jitter(alpha=0.6)+ 
   geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
-  scale_colour_manual(values = c('#0099FF','green','tomato',"orange","cyan","yellow"))+
+  scale_colour_manual(values = c('#0099FF','green','tomato','orange',"cyan","yellow"))+
   scale_y_continuous(limits = c(min(0),max(50)))+ 
   theme_bw()+
   labs(title = 'Westminster Voting Intention - GE2024',caption = 'Sources:BMG,DeltaPoll,Redfield&Wilton,PeoplePolling\nTeche,Opinum,Savanta,Survation,WeThink,MoreInCommon\nLord Ashcroft,JL Partners,YouGov\njamesstats.github.io/projectx',x='',y='',color='')+
@@ -44,8 +44,33 @@ ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
 
 | End Date    |  Con  |     Lab     | Lib Dem | SNP  | Greens | Reform |
 |-------------|:-----:|:-----------:|:-------:|:----:|:------:|:------:|
-| May 31.2024 | 24.5% |  **44.3%**  |  9.5%   | 2.8% |  5.5%  |  12%   |
+| Jun 2.2024  | 24.5% |   **42%**   |   12%   | 2.8% |  5.5%  |  10%   |
 | Mar 31.2024 | 22.5% | ***43.5***% |  9.5%   |  3%  |  6.5%  | 13.3%  |
 | Feb 28.2024 | 23.5% | ***45.3***% |  8.5%   | 3.3% |  5.8%  | 11.5%  |
 
 *Used 2-Day weighted moving average(WMA) to aggregate the average the polls.*
+
+General Election polling comparison with 30 days to go in 2019 vs 2024.
+
+```{r, GBGEPOLLS, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center'}
+library(ggplot2)
+library(lubridate) 
+library(zoo)
+library(dplyr)
+library(readxl) 
+
+#data
+GE <- read_excel("~/Documents/elections_files/greatbritain.xlsx",sheet = 'comp')
+#chart
+ggplot(GE, mapping = aes(x=Days, y=Share, color=Party))+
+  geom_line(lwd=1.5)+ 
+  geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
+  scale_colour_manual(values = c('#0099FF','#0099ff','green','green','tomato','tomato','orange',"orange",'cyan','yellow',"yellow"))+ 
+  scale_y_continuous(limits = c(min(0),max(50)))+ 
+  theme_bw()+
+  labs(title = '30 Days To Election Day - 2019 vs 2024',caption = 'Sources:BMG,DeltaPoll,Redfield&Wilton,PeoplePolling\nTeche,Opinum,Savanta,Survation,WeThink,MoreInCommon\nLord Ashcroft,JL Partners,Panelbase,Focaldata,Ipsos,Kantar,YouGov\njamesstats.github.io/projectx',x='',y='',color='')+
+  theme(legend.position = "none",plot.title = element_text(family = "Andale Mono"),
+        legend.text = element_text(face = 'bold',family = 'Andale Mono'),
+        plot.caption = element_text(face = 'italic',family = "Andale Mono", size = 10),
+        axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold"))
+```
