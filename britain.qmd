@@ -32,7 +32,7 @@ ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
   scale_colour_manual(values = c('#0099FF','green','tomato','orange',"cyan","yellow"))+
   scale_y_continuous(limits = c(min(0),max(50)))+ 
   theme_bw()+
-  labs(title = 'Westminster Voting Intention - GE2024',caption = 'Sources:BMG,DeltaPoll,Redfield&Wilton,PeoplePolling\nTeche,Opinum,Savanta,Survation,WeThink,MoreInCommon\nLord Ashcroft,JL Partners,YouGov\njamesstats.github.io/projectx',x='',y='',color='')+
+  labs(title = 'Westminster Voting Intention - GE2024',caption = 'Sources:BMG,DeltaPoll,Redfield&Wilton,PeoplePolling\nTeche,Opinum,Savanta,Survation,WeThink,MoreInCommon\nLord Ashcroft,JL Partners,YouGov\njamesstats.github.io/projectx/britain',x='',y='',color='')+
   theme(legend.position = "right",plot.title = element_text(family = "Andale Mono"),
         legend.text = element_text(face = 'bold',family = 'Andale Mono'),
         plot.caption = element_text(face = 'italic',family = "Andale Mono", size = 10),
@@ -44,7 +44,7 @@ ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
 
 | End Date    |  Con  |     Lab     | Lib Dem | SNP  | Greens | Reform |
 |-------------|:-----:|:-----------:|:-------:|:----:|:------:|:------:|
-| Jun 3.2024  |  24%  |  **41.8%**  |  9.8%   | 3.3% |   5%   | 13.5%  |
+| Jun 7.2024  | 23.5% |   **44%**   |  9.5%   | 3.5% |  5.3%  | 12.8%  |
 | Mar 31.2024 | 22.5% | ***43.5***% |  9.5%   |  3%  |  6.5%  | 13.3%  |
 | Feb 28.2024 | 23.5% | ***45.3***% |  8.5%   | 3.3% |  5.8%  | 11.5%  |
 
@@ -70,7 +70,7 @@ ggplot(GE, mapping = aes(x=Days, y=Share, color=Party))+
   scale_colour_manual(values = c('#0099FF','#0099ff','green','green','tomato','tomato','orange',"orange",'cyan','yellow',"yellow"))+ 
   scale_y_continuous(limits = c(min(0),max(50)))+ 
   theme_bw()+
-  labs(title = '30 Days To Election Day - 2019 vs 2024',caption = 'Sources:BMG,DeltaPoll,Redfield&Wilton,PeoplePolling\nTeche,Opinum,Savanta,Survation,WeThink,MoreInCommon\nLord Ashcroft,JL Partners,Panelbase,Focaldata,Ipsos,Kantar,YouGov\njamesstats.github.io/projectx',x='',y='',color='')+
+  labs(title = 'Westminster Voting Intention - 2019 vs 2024(Final Month)',caption = 'Sources:BMG,DeltaPoll,Redfield&Wilton,PeoplePolling\nTeche,Opinum,Savanta,Survation,WeThink,MoreInCommon\nLord Ashcroft,JL Partners,Panelbase,Focaldata,Ipsos,Kantar,YouGov\njamesstats.github.io/projectx/britain',x='',y='',color='')+
   theme(legend.position = "none",plot.title = element_text(family = "Andale Mono"),
         legend.text = element_text(face = 'bold',family = 'Andale Mono'),
         plot.caption = element_text(face = 'italic',family = "Andale Mono", size = 10),
