@@ -3,7 +3,7 @@ title: ""
 format: html
 ---
 
-The general election will be on 4th of July 2024. The polls used for the aggregate are all sponsored by news paper, radio, news channels and conducted by major firms.
+**Aggregated national polls of Great Britain by sponsorship starting January 2024.**
 
 ```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 library(ggplot2)
@@ -45,15 +45,59 @@ ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
 
 | End Date    |  Con  |     Lab     | Lib Dem | SNP  | Greens | Reform |
 |-------------|:-----:|:-----------:|:-------:|:----:|:------:|:------:|
-| Jun 8.2024  | 23.8% |  **43.8%**  |   10%   |  3%  |   5%   | 12.5%  |
+| Jun 12.2024 | 21.3% |  **39.8%**  |  11.3%  | 2.8% |   6%   | 14.7%  |
 | Mar 31.2024 | 22.5% | ***43.5***% |  9.5%   |  3%  |  6.5%  | 13.3%  |
 | Feb 28.2024 | 23.5% | ***45.3***% |  8.5%   | 3.3% |  5.8%  | 11.5%  |
 
 *Used 2-Day weighted moving average(WMA) to aggregate the average the polls.*
 
+**Polling results break down by sponsors with polling firms.**
+
+```{r,SPONSORS, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+library(ggplot2)
+library(lubridate) 
+library(zoo)
+library(dplyr)
+library(readxl) 
+#data polls
+greatbritain <- read_excel("~/Documents/elections_files/greatbritain.xlsx")
+#weighted average
+gbmean <- greatbritain %>%
+  dplyr::arrange(desc(Party)) %>% 
+  dplyr::group_by(Party) %>% 
+  dplyr::mutate(pct_02da = zoo::rollmean(Share, k = 4, fill = NA),
+                pct_03da = zoo::rollmean(Share, k = 6, fill = NA),
+                pct_05da = zoo::rollmean(Share, k = 8, fill = NA),
+                pct_21da = zoo::rollmean(Share, k = 10, fill = NA)) %>% 
+  dplyr::ungroup() 
+#date format
+greatbritain$end_date <- as.Date(paste(greatbritain$end_date, 1, sep="-"), format="%Y-%m-%d") 
+greatbritain<-as.data.frame(greatbritain)
+#plot 
+ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
+  geom_jitter(alpha=0.6)+ 
+  geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
+  scale_colour_manual(values = c('#0099FF','green','tomato','orange',"cyan","yellow"))+
+  scale_y_continuous(limits = c(min(0),max(50)))+ 
+  theme_bw()+
+  labs(title = 'Westminster Voting Intention - GE2024',
+  caption = 'Sponsors:BestforBritain,ConservativeBritainAlliance,DailyMail,DailyMirror,
+             EveningStandard,GBNews,GoodMorningBritain,LadyMcAlpine,
+             MailOnSunday,SkyNews,TimesRadio,TheRestIsPolitics,
+             TheObserver,THEi,TheTelegraph,TheSun,WPI Strategy\njamesstats.github.io/projectx/britain',x='',y='',color='')+
+  theme_minimal() +
+  theme(legend.position = "bottom",plot.title = element_text(family = "Andale Mono"),
+        legend.text = element_text(face = 'bold',family = 'Andale Mono'),
+        plot.caption = element_text(face = 'italic',hjust = 0, family = "Andale Mono", size = 10),
+        axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold")) +
+  facet_wrap(~Pollster,ncol = 4) 
+
+
+```
+
 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
 
-General Election polling comparison with 30 days to go in 2019 vs 2024.
+**General Election polling comparison with 30 days to go in 2019 vs 2024.**
 
 ```{r, GBGEPOLLS, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center'}
 library(ggplot2)
