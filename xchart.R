@@ -25,13 +25,14 @@ ggplot(gbmean, mapping = aes(x=end_date, y=pct_02da, color=Party))+
   scale_y_continuous(limits = c(min(0),max(50)))+ 
   theme_bw()+
   labs(title = 'Westminster Voting Intention - GE2024',
-       caption = 'Sponsors:BestforBritain,ConservativeBritainAlliance,DailyMail,DailyMirror,
+       caption = 'Clients:BestforBritain,ConservativeBritainAlliance,DailyMail,DailyMirror,
              EveningStandard,GBNews,GoodMorningBritain,LadyMcAlpine,
              MailOnSunday,SkyNews,TimesRadio,TheRestIsPolitics,
-             TheObserver,THEi,TheTelegraph,TheSun,WPI Strategy\njamesstats.github.io/projectx/britain',x='',y='',color='')+
+             TheObserver,THEi,TheTelegraph,TheSun,WPI Strategy\nx.com/james_polls',x='',y='',color='')+
   theme_minimal() +
   theme(legend.position = "none",plot.title = element_text(family = "Andale Mono"),
         legend.text = element_text(face = 'bold',family = 'Andale Mono'),
         plot.caption = element_text(face = 'italic',hjust = 1, family = "Andale Mono", size = 10),
         axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold")) +
   facet_wrap(~Pollster,ncol = 4) 
+ggsave('gepolls.png',dpi = 1080)

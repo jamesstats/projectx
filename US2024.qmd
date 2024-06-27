@@ -42,7 +42,7 @@ labs(x="",y="",color="",caption = "Source::538.COM(3DAWMA)AtlasIntel,CBS,Civiqs,
   theme(legend.position = 'none',strip.text.x = element_text(size = 12, color = "black", face = "bold.italic",family = "Andale Mono"),strip.text.y = element_text(size = 8,
         color = "black", face ="bold.italic",family = "Andale Mono"),strip.background = element_rect(color="black", fill="white", size=0.5, linetype="solid"
      ),plot.caption = element_text(face = "bold.italic",family = "Andale Mono"),
-     axis.text.x = element_text(face = 'bold.italic',family = 'Andale Mono'),
+     axis.text.x = element_text(face = 'bold',family = 'Andale Mono'),
      axis.text.y = element_text(face = 'bold',family = 'Andale Mono'))+ 
   facet_wrap(~type,nrow = 2)     
 
@@ -52,7 +52,7 @@ labs(x="",y="",color="",caption = "Source::538.COM(3DAWMA)AtlasIntel,CBS,Civiqs,
 
 | End Date     | Biden | Trump | Kennedy |    Lead     |           Type           |
 |:-------------|:-----:|:-----:|:-------:|:-----------:|:------------------------:|
-| Jun 12, 2024 |  45%  | 45.5% |         | +0.5% Trump |     **Head-to-Head**     |
-| Jun 12, 2024 | 45.5% |  45%  |  10.5%  | +0.5% Biden | *with* **Third-Parties** |
+| Jun 22, 2024 |  43%  |  43%  |         |      =      |     **Head-to-Head**     |
+| Jun 22, 2024 | 41.6% |  42%  |   9%    | +0.4% Biden | *with* **Third-Parties** |
 
 *Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
