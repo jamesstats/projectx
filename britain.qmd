@@ -29,8 +29,12 @@ greatbritain<-as.data.frame(greatbritain)
 ggplot(gbmean, mapping = aes(x=end_date, y=pct_05da, color=Party))+
   geom_jitter(alpha=0.6)+ 
   geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
+  geom_vline(xintercept = as.POSIXct(as.Date(c("2024-05-22","2024-06-03",size=1.5))), linetype=4)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-05-22"),y = 25, label = "Elections Called", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-06-03"),y = 25, label = "Farage Reform Leader", angle=90, vjust=0)+
   scale_colour_manual(values = c('#0099FF','green','tomato','orange',"cyan","yellow"))+
   scale_y_continuous(limits = c(min(0),max(50)))+ 
+   
   theme_bw()+
   labs(title = 'Westminster Voting Intention - GE2024',caption = 'Sources:BMG,DeltaPoll,Redfield&Wilton,PeoplePolling\nTechne,Opinum,Savanta,Survation,WeThink,MoreInCommon\nLord Ashcroft,JL Partners,YouGov\njamesstats.github.io/projectx/britain',x='',y='',color='')+
   theme_minimal() +
@@ -45,7 +49,7 @@ ggplot(gbmean, mapping = aes(x=end_date, y=pct_05da, color=Party))+
 
 | End Date    |  Con  |     Lab     | Lib Dem | SNP  | Greens | Reform |
 |-------------|:-----:|:-----------:|:-------:|:----:|:------:|:------:|
-| Jul 1.2024  | 20.2% |  **40.6%**  |  11.2%  | 2.8% |  5.8%  | 16.5%  |
+| Jul 2.2024  | 20.2% |  **40.6%**  |  11.2%  | 2.8% |  5.8%  | 16.5%  |
 | Jun 30.2024 | 20.3% |  **40.5%**  |  11.5%  | 2.6% |   6%   | 16.4%  |
 | Mar 31.2024 | 22.5% | ***43.5***% |  9.5%   |  3%  |  6.5%  | 13.3%  |
 | Feb 28.2024 | 23.5% | ***45.3***% |  8.5%   | 3.3% |  5.8%  | 11.5%  |

@@ -11,10 +11,12 @@ editor: visual
 library(readxl)
 library(zoo)
 library(dplyr)
+library(lubridate) 
 library(ggplot2) 
 library(extrafont) 
 #fetching the data
 us2024<-read_excel("~/Documents/elections_files/ge2024.xlsx",sheet = 'multi') 
+  
 plmean <- us2024 %>%
   dplyr::arrange(desc(candidates)) %>% 
   dplyr::group_by(candidates) %>% 
@@ -33,9 +35,13 @@ plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
                   )
 #plot
 ggplot(plmean,aes(x=end_date, y=pct_03da, color=candidates))+
-  geom_jitter(alpha=0.6)+
-    geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
-labs(x="",y="",color="",caption = "Source::538.COM(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CNN,Cygnal,Emerson,FoxNews,J.L Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Quinnipiac\njamesstats.github.io/projectx")+
+geom_jitter(alpha=0.6)+
+geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
+geom_vline(xintercept = as.POSIXct(as.Date(c("2023-10-07","2024-05-30","2024-06-27"))), linetype=4)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2023-10-07"),y = 20, label = "Hamas Attacks", angle=90, vjust=0)+ 
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-05-30"),y = 20, label = "Trump Guilty", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-06-27"),y = 20, label = "CNN Debate", angle=90, vjust=0)+
+labs(x="",y="",color="",caption = "Source::538.COM(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CNN,Cygnal,Emerson,FoxNews,JL Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Quinnipiac\njamesstats.github.io/projectx")+
     scale_colour_manual(values = c('#0099ff','yellow','green', '#ff6666','purple'))+
   scale_y_continuous(limits = c(min(0),max(50)))+ 
   theme_bw()+
@@ -52,7 +58,7 @@ labs(x="",y="",color="",caption = "Source::538.COM(3DAWMA)AtlasIntel,CBS,Civiqs,
 
 | End Date     | Biden | Trump | Kennedy |    Lead     |           Type           |
 |:-------------|:-----:|:-----:|:-------:|:-----------:|:------------------------:|
-| Jun 24, 2024 |  38%  | 41.6% |         | +3.6% Trump |     **Head-to-Head**     |
-| Jun 24, 2024 |  38%  |  44%  |  8.6%   |  +6% Trump  | *with* **Third-Parties** |
+| Jun 28, 2024 |  39%  |  45%  |         |  +6% Trump  |     **Head-to-Head**     |
+| Jun 28, 2024 | 36.5% |  41%  |   11%   | +4.5% Trump | *with* **Third-Parties** |
 
 *Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
