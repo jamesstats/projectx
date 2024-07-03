@@ -58,7 +58,7 @@ labs(x="",y="",color="",caption = "Source::538.COM(3DAWMA)AtlasIntel,CBS,Civiqs,
 
 | End Date     | Biden | Trump | Kennedy |    Lead     |           Type           |
 |:-------------|:-----:|:-----:|:-------:|:-----------:|:------------------------:|
-| Jun 28, 2024 |  39%  |  45%  |         |  +6% Trump  |     **Head-to-Head**     |
-| Jun 28, 2024 | 36.5% |  41%  |   11%   | +4.5% Trump | *with* **Third-Parties** |
+| Jul 1, 2024  |  39%  |  44%  |         |  +5% Trump  |     **Head-to-Head**     |
+| Jun 28, 2024 | 42.6% |  47%  |   9%    | +4.4% Trump | *with* **Third-Parties** |
 
 *Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
