@@ -117,7 +117,10 @@ GE <- read_excel("~/Documents/elections_files/greatbritain.xlsx",sheet = 'comp')
 #chart
 ggplot(GE, mapping = aes(x=Days, y=Share, color=Party))+
   geom_line(lwd=1.5)+ 
-   
+  geom_vline(xintercept = -1, linetype=4)+
+  geom_vline(xintercept = 0, linetype=4)+ 
+  annotate("text",fontsize=10, fontface="italic", x = -1,y = 25, label = "Election Day", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = 0,y = 25, label = "Election Results", angle=90, vjust=0)+  
   scale_colour_manual(values = c('lightblue','#0099ff','lightgreen','green','#ff9980','#ff3300', '#ffc266',"#ff9900",'cyan','yellow','gold'))+ 
   scale_y_continuous(limits = c(min(0),max(50)))+ 
   theme_bw()+
