@@ -30,7 +30,7 @@ wimean$TYPE <- factor(wimean$TYPE, levels = c("h_2_h", "multi"),
                   labels = c("Biden vs Trump", "Biden vs Trump with Third Parties")
                   )  
 # plot 
-ggplot(wimean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
+ggplot(wimean, mapping = aes(x=end_date, y=pct_03da, color=answer))+
   geom_jitter() +
     geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
   scale_colour_manual(values = c('#0099ff','#ff6666')) +
@@ -44,12 +44,12 @@ ggplot(wimean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
   facet_wrap(~TYPE, nrow = 2) 
 ```
 
-| End Date   | Biden | Trump     | Ballot                 |
-|------------|-------|-----------|------------------------|
-| May 9,2024 | 42.5% | 42.5%     | **Head-to-Head**       |
-| May 9,2024 | 41.3% | **44.5%** | with **Third-Parties** |
+| End Date    | Biden | Trump     | Ballot                 |
+|-------------|-------|-----------|------------------------|
+| Jul 10,2024 | 41%   | 43.3%     | **Head-to-Head**       |
+| Jul 10,2024 | 42.3% | **42.7%** | with **Third-Parties** |
 
-*Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
+*Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
 
 ## Pennsylvania
 
@@ -80,7 +80,7 @@ pamean$TYPE <- factor(pamean$TYPE, levels = c("h_2_h", "multi"),
                   labels = c("Biden vs Trump", "Biden vs Trump with Third Parties")
                   )  
 # plot 
-ggplot(pamean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
+ggplot(pamean, mapping = aes(x=end_date, y=pct_03da, color=answer))+
   geom_jitter()+
     geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
   scale_colour_manual(values = c('#0099ff','#ff6666')) +
@@ -97,12 +97,12 @@ ggplot(pamean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
   
 ```
 
-| End Date      | Biden | Trump     | Ballot                 |
-|---------------|-------|-----------|------------------------|
-| April 29,2024 | 40.5% | **44%**   | **Head-to-Head**       |
-| April 29,2024 | 42.8% | **45.8%** | with **Third-Parties** |
+| End Date    | Biden | Trump     | Ballot                 |
+|-------------|-------|-----------|------------------------|
+| Jul 11,2024 | 40.7% | **45%**   | **Head-to-Head**       |
+| Jul 11,2024 | 42%   | **46.6%** | with **Third-Parties** |
 
-*Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
+*Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
 
 ## Michigan
 
@@ -133,7 +133,7 @@ mimean$TYPE <- factor(mimean$TYPE, levels = c("h_2_h", "multi"),
                   labels = c("Biden vs Trump", "Biden vs Trump with Third Parties")
                   )  
 # plot 
-ggplot(mimean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
+ggplot(mimean, mapping = aes(x=end_date, y=pct_03da, color=answer))+
   geom_jitter() +
     geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1)+
   scale_colour_manual(values = c('#0099ff','#ff6666')) +
@@ -148,9 +148,9 @@ ggplot(mimean, mapping = aes(x=end_date, y=pct_02da, color=answer))+
   facet_wrap(~TYPE, nrow = 2) 
 ```
 
-| End Date      | Biden | Trump     | Ballot                 |
-|---------------|-------|-----------|------------------------|
-| April 29,2024 | 41.8% | **43%**   | **Head-to-Head**       |
-| April 29,2024 | 43.5% | **45.3%** | with **Third-Parties** |
+| End Date    | Biden | Trump     | Ballot                 |
+|-------------|-------|-----------|------------------------|
+| Jul 10,2024 | 39.7% | **41.3%** | **Head-to-Head**       |
+| Jul 10,2024 | 41%   | **42%**   | with **Third-Parties** |
 
-*Used 2-Day weighted moving average(WMA) to aggregate the average of the polls.*
+*Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
