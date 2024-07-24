@@ -65,3 +65,18 @@ ggplot(gbmean, mapping = aes(x=end_date, y=pct_05da, color=Party))+
         axis.text.x = element_text(face = "bold", angle = 30),axis.text.y = element_text(face = "bold")) +
   facet_wrap(~Pollster,ncol = 4) 
 ggsave('mediapolls.png', dpi = 1080)
+#yaml
+- section: "MAPS"
+contents: 
+  - text: "Philadelphia 08 vs 12"
+href: philly.qmd
+- text: "Las Vegas" 
+href: lasvegas.qmd
+- section: "Massachusetts"
+contents: 
+  - text: "Population"
+href: mass.qmd
+- text: "State House"
+href: MAStateHouse.qmd
+- text: "Lawrence"
+href: lawrence.qmd 
