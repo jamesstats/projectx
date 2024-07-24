@@ -29,20 +29,6 @@ website:
             href: britain.qmd  
           - text: "2020 National Polls"
             href: prestwozero.qmd
-      - section: "MAPS"
-        contents: 
-          - text: "Philadelphia 08 vs 12"
-            href: philly.qmd
-          - text: "Las Vegas" 
-            href: lasvegas.qmd
-      - section: "Massachusetts"
-        contents: 
-          - text: "Population"
-            href: mass.qmd
-          - text: "State House"
-            href: MAStateHouse.qmd
-          - text: "Lawrence"
-            href: lawrence.qmd
             
 format:
   html:
