@@ -21,12 +21,12 @@ plmean <- us2024 %>%
   dplyr::arrange(desc(candidates)) %>% 
   dplyr::group_by(candidates) %>% 
   dplyr::mutate(
-                pct_01da = zoo::rollmean(pct, k = 1, fill = NA),
                 pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
                 pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
                 pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
                 pct_05da = zoo::rollmean(pct, k = 5, fill = NA),
-                pct_08da = zoo::rollmean(pct, k = 8, fill = NA)) %>% 
+                pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
+                pct_07da = zoo::rollmean(pct, k =7, fill =NA)) %>% 
   dplyr::ungroup()  
 
 #changing the labels for the facets
@@ -34,7 +34,7 @@ plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
                   labels = c("Biden/Harris-Trump", "Biden/Harris-Trump-Kennedy-West-Stein")
                   )
 #plot
-ggplot(plmean,aes(x=end_date, y=pct_03da, color=candidates))+
+ggplot(plmean,aes(x=end_date, y=pct_05da, color=candidates))+
 geom_jitter(alpha=0.6)+
 geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
 geom_vline(xintercept = as.POSIXct(as.Date(c("2023-10-07","2024-05-30","2024-06-27",'2024-07-21'))), linetype=4)+
@@ -59,7 +59,7 @@ labs(x="",y="",color="",caption = "Sources:(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CN
 
 | End Date     | Harris | Trump | Kennedy |    Lead     |           Type           |
 |:-------------|:------:|:-----:|:-------:|:-----------:|:------------------------:|
-| Jul 25, 2024 | 44.3%  |  45%  |         | +0.7% Trump |     **Head-to-Head**     |
-| Jul 25, 2024 | 44.3%  |  45%  |  4.7%   | +0.7% Trump | *with* **Third-Parties** |
+| Jul 27, 2024 | 45.6%  | 46.6% |         | +1.0% Trump |     **Head-to-Head**     |
+| Jul 27, 2024 | 45.6%  | 46.5% |  4.5%   | +0.9% Trump | *with* **Third-Parties** |
 
-*Used 3-Day weighted moving average(WMA) to aggregate the average of the polls.*
+*Used 5-Day weighted moving average(WMA) to aggregate the average of the polls.*
