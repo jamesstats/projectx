@@ -42,7 +42,7 @@ geom_vline(xintercept = as.POSIXct(as.Date(c("2023-10-07","2024-05-30","2024-06-
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-05-30"),y = 20, label = "Trump Guilty", angle=90, vjust=0)+
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-06-27"),y = 20, label = "CNN Debate", angle=90, vjust=0)+
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-07-21"),y = 25, label = "Biden Exit", angle=90, vjust=0)+
-labs(x="",y="",color="",caption = "Sources:(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CNN,Cygnal,Emerson,FoxNews,JL Partners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Quinnipiac\njamesstats.github.io/projectx")+
+labs(x="",y="",color="",caption = "Sources:(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CNN,Cygnal,Emerson,FoxNews,JLPartners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Quinnipiac\njamesstats.github.io/projectx")+
     scale_colour_manual(values = c('#0099ff','yellow','green', '#ff6666','purple'))+
   scale_y_continuous(limits = c(min(0),max(50)))+ 
   theme_bw()+
@@ -57,9 +57,9 @@ labs(x="",y="",color="",caption = "Sources:(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CN
 
 ## *Polling Average*
 
-| End Date     | Harris | Trump | Kennedy |    Lead     |           Type           |
-|:-------------|:------:|:-----:|:-------:|:-----------:|:------------------------:|
-| Jul 27, 2024 | 45.6%  | 46.6% |         | +1.0% Trump |     **Head-to-Head**     |
-| Jul 27, 2024 | 45.6%  | 46.5% |  4.5%   | +0.9% Trump | *with* **Third-Parties** |
+| End Date     | Harris | Trump | Kennedy |     Lead     |           Type           |
+|:----------|:---------:|:---------:|:---------:|:---------:|:---------------:|
+| Jul 28, 2024 |  47%   | 47.1% |         | +0.1% Trump  |     **Head-to-Head**     |
+| Jul 28, 2024 | 47.2%  | 45.5% |   5%    | +1.7% Harris | *with* **Third-Parties** |
 
 *Used 5-Day weighted moving average(WMA) to aggregate the average of the polls.*
