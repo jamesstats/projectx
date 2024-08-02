@@ -44,10 +44,10 @@ ggplot(wimean, mapping = aes(x=end_date, y=pct_06da, color=answer))+
   facet_wrap(~TYPE, nrow = 2) 
 ```
 
-| End Date    | Biden | Trump     | Ballot                 |
-|-------------|-------|-----------|------------------------|
-| Jul 23,2024 | 46.3% | 47.3%     | **Head-to-Head**       |
-| Jul 23,2024 | 45.5% | **46.7%** | with **Third-Parties** |
+| End Date    | Harris    | Trump   | Ballot                 |
+|-------------|-----------|---------|------------------------|
+| Jul 24,2024 | **47.1%** | 46.7%   | **Head-to-Head**       |
+| Jul 24,2024 | 46.5%     | **47%** | with **Third-Parties** |
 
 *Used 6-Day weighted moving average(WMA) to aggregate the average of the polls.*
 
@@ -97,10 +97,10 @@ ggplot(pamean, mapping = aes(x=end_date, y=pct_06da, color=answer))+
   
 ```
 
-| End Date    | Biden | Trump     | Ballot                 |
-|-------------|-------|-----------|------------------------|
-| Jul 24,2024 | 45.6% | **46.7%** | **Head-to-Head**       |
-| Jul 24,2024 | 45.8% | **47%**   | with **Third-Parties** |
+| End Date    | Biden     | Trump     | Ballot                 |
+|-------------|-----------|-----------|------------------------|
+| Jul 25,2024 | **46.8**% | 45.2**%** | **Head-to-Head**       |
+| Jul 25,2024 | **47%**   | 46.2**%** | with **Third-Parties** |
 
 *Used 6-Day weighted moving average(WMA) to aggregate the average of the polls.*
 
@@ -149,7 +149,7 @@ ggplot(mimean, mapping = aes(x=end_date, y=pct_06da, color=answer))+
 
 | End Date    | Biden | Trump     | Ballot                 |
 |-------------|-------|-----------|------------------------|
-| Jul 23,2024 | 45.8% | **47.2%** | **Head-to-Head**       |
-| Jul 23,2024 | 44.6% | **47.2%** | with **Third-Parties** |
+| Jul 24,2024 | 45.3% | **45.8%** | **Head-to-Head**       |
+| Jul 24,2024 | 45.5% | **46.5%** | with **Third-Parties** |
 
 *Used 6-Day weighted moving average(WMA) to aggregate the average of the polls.*
