@@ -58,8 +58,8 @@ labs(x="",y="",color="",caption = "Sources:(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CN
 ## *Polling Average*
 
 | End Date     | Harris | Trump | Kennedy |     Lead     |           Type           |
-|:----------|:---------:|:---------:|:---------:|:---------:|:---------------:|
-| Jul 28, 2024 |  47%   | 47.1% |         | +0.1% Trump  |     **Head-to-Head**     |
-| Jul 28, 2024 | 47.2%  | 45.5% |   5%    | +1.7% Harris | *with* **Third-Parties** |
+|:-----------|:----------:|:----------:|:----------:|:----------:|:----------:|
+| Jul 31, 2024 | 48.4%  | 46.5% |         | +1.9% Harris |     **Head-to-Head**     |
+| Jul 31, 2024 | 47.4%  |  46%  |  4.5%   | +1.4% Harris | *with* **Third-Parties** |
 
 *Used 5-Day weighted moving average(WMA) to aggregate the average of the polls.*
