@@ -37,12 +37,13 @@ plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
 ggplot(plmean,aes(x=end_date, y=pct_05da, color=candidates))+
 geom_jitter(alpha=0.6)+
 geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
-geom_vline(xintercept = as.POSIXct(as.Date(c("2023-10-07","2024-05-30","2024-06-27",'2024-07-21'))), linetype=4)+
+geom_vline(xintercept = as.POSIXct(as.Date(c("2023-10-07","2024-05-30","2024-06-27",'2024-07-21','2024-08-23'))), linetype=4)+
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2023-10-07"),y = 20, label = "Hamas Attacks", angle=90, vjust=0)+ 
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-05-30"),y = 20, label = "Trump Guilty", angle=90, vjust=0)+
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-06-27"),y = 20, label = "CNN Debate", angle=90, vjust=0)+
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-07-21"),y = 25, label = "Biden Exit", angle=90, vjust=0)+
-labs(x="",y="",color="",caption = "Sources:(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CNN,Cygnal,Emerson,FoxNews,JLPartners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Quinnipiac\njamesstats.github.io/projectx")+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-08-23"),y = 25, label = "RFKJR Exit", angle=90, vjust=0)+
+labs(x="",y="",color="",caption = "Sources:(5DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CNN,Cygnal,Emerson,FoxNews,JLPartners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Quinnipiac\njamesstats.github.io/projectx")+
     scale_colour_manual(values = c('#0099ff','yellow','green', '#ff6666','purple'))+
   scale_y_continuous(limits = c(min(0),max(50)))+ 
   theme_bw()+
@@ -55,11 +56,11 @@ labs(x="",y="",color="",caption = "Sources:(3DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CN
 
 ```
 
-## *Polling Average*
+## *National Polling Average*
 
-| End Date    | Harris | Trump | Kennedy |     Lead     |           Type           |
-|:------------|:------:|:-----:|:-------:|:------------:|:------------------------:|
-| Aug 5, 2024 | 48.2%  | 46.2% |         | +2.0% Harris |     **Head-to-Head**     |
-| Aug 5, 2024 |  47%   | 45.6% |  4.8%   | +1.4% Harris | *with* **Third-Parties** |
+| End Date     | Harris | Trump |     Lead     |           Type           |
+|:-------------|:------:|:-----:|:------------:|:------------------------:|
+| Aug 30, 2024 | 48.4%  | 44.8% | +3.6% Harris |     **Head-to-Head**     |
+| Aug 30, 2024 | 48.2%  | 44.8% | +3.4% Harris | *with* **Third-Parties** |
 
 *Used 5-Day weighted moving average(WMA) to aggregate the average of the polls.*
