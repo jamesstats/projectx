@@ -58,9 +58,9 @@ labs(x="",y="",color="",caption = "Sources:(5DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CN
 
 ## *National Polling Average*
 
-| End Date     | Harris | Trump |     Lead     |           Type           |
-|:-------------|:------:|:-----:|:------------:|:------------------------:|
-| Aug 30, 2024 | 48.4%  | 44.8% | +3.6% Harris |     **Head-to-Head**     |
-| Aug 30, 2024 | 48.2%  | 44.8% | +3.4% Harris | *with* **Third-Parties** |
+| End Date    | Harris | Trump |     Lead     |           Type           |
+|:------------|:------:|:-----:|:------------:|:------------------------:|
+| Oct 6, 2024 | 48.2%  | 45.8% | +2.4% Harris |     **Head-to-Head**     |
+| Oct 6, 2024 | 47.6%  |  46%  | +1.6% Harris | *with* **Third-Parties** |
 
 *Used 5-Day weighted moving average(WMA) to aggregate the average of the polls.*
