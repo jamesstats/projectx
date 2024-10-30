@@ -23,8 +23,6 @@ website:
         contents:
           - text: "2024 Nationa Polls"
             href: US2024.qmd 
-          - text: "2024 Swing States"
-            href: mipawi.qmd
           - text: "Westminister Polls"
             href: britain.qmd  
           - text: "2020 National Polls"
