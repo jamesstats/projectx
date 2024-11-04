@@ -31,7 +31,7 @@ plmean <- us2024 %>%
 
 #changing the labels for the facets
 plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
-                  labels = c("Harris-Trump", "Harris-Trump-Kennedy-West-Stein")
+                  labels = c("Harris-Trump", "Harris-Trump-Kennedy-Stein-West") 
                   )
 #plot
 ggplot(plmean,aes(x=end_date, y=pct_05da, color=candidates))+
@@ -80,7 +80,7 @@ plmean <- us2024 %>%
 
 #changing the labels for the facets
 plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
-                  labels = c("Biden/Harris-Trump", "Biden/Harris-Trump-Kennedy-West-Stein")
+                  labels = c("Biden>Harris-Trump", "Biden>Harris-Trump-Kennedy-Stein-West")
                   )
 #plot
 ggplot(plmean,aes(x=end_date, y=pct_05da, color=candidates))+

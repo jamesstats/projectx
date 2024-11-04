@@ -21,7 +21,7 @@ website:
     - contents:
       - section: "POLLS"
         contents:
-          - text: "2024 Nationa Polls"
+          - text: "2024 National Polls"
             href: US2024.qmd 
           - text: "Westminister Polls"
             href: britain.qmd  
