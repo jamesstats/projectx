@@ -5,7 +5,7 @@ editor: visual
 
 *Tracking the approval rating of Donald Trump second stint in the White House.*
 
-```{r, trumptracker, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', fig.dim=c(12,8),fig.dpi=1080}
+```{r, trumptracker, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center',fig.dpi=1080}
 library(ggplot2)
 library(lubridate)
 library(zoo)
@@ -31,7 +31,7 @@ ggplot(DTPoll, mapping = aes(x=Date, y=pct_04da, color=Opinion))+
   scale_y_continuous(limits = c(min(35),max(55)))+ 
    
   theme_bw()+
-  labs(title = 'TRUMP APPROVAL TRACKING',x='',y='',color='')+ 
+  labs(title = 'TRUMP APPROVAL TRACKING',x='',y='',color='', caption = 'jamesstats.github.io/projectx')+ 
        
   theme_minimal() +
   theme(legend.position = "bottom",plot.title = element_text(family = "Andale Mono"),
@@ -39,3 +39,8 @@ ggplot(DTPoll, mapping = aes(x=Date, y=pct_04da, color=Opinion))+
         plot.caption = element_text(face = 'italic',hjust=1,family = "Andale Mono", size = 10),
         axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold")) 
 ```
+
+|               |             |                |
+|:-------------:|:-----------:|:--------------:|
+|   **Date**    | **Approve** | **Disapprove** |
+| March 1, 2025 |    48.8%    |      48%       |
