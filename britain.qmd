@@ -30,7 +30,7 @@ ggplot(natpoll, mapping = aes(x=Date, y=pct_02da, color=Party))+
   geom_vline(xintercept = as.POSIXct(as.Date(c("2024-07-04","2024-11-2",size=1.5))), linetype=4)+
   
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-07-04"),y = 25, label = "General Elections", angle=90, vjust=0)+
-  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-11-02"),y = 25, label = "Badenoch New Leader", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-11-02"),y = 25, label = "Badenoch New Cons Leader", angle=90, vjust=0)+
   scale_colour_manual(values = c('#0099FF','green','tomato','orange',"cyan","yellow"))+
   scale_y_continuous(limits = c(min(0),max(50)))+ 
    
@@ -44,7 +44,13 @@ ggplot(natpoll, mapping = aes(x=Date, y=pct_02da, color=Party))+
 
 ```
 
-**Aggregated national polls of Great Britain by sponsorship starting January to July 2024.**
+**Polling Averages**
+
+| End Date     | Labour | Conservatives | Reform | Lib Dems | Greens | SNP  |
+|--------------|:------:|:-------------:|:------:|:--------:|:------:|:----:|
+| Feb 28, 2025 |  26%   |     22.5%     | 24.5%  |  13.5%   |   8%   | 2.5% |
+
+**AGGREGATED NATIONAL POLLS FOR GENERAL ELECTION 2024 FROM JANUARY TO JULY**
 
 ```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 library(ggplot2)

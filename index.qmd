@@ -6,5 +6,4 @@ editor: visual
 Welcome to my website!
 
 -   [2024 National Presidential Polls](https://jamesstats.github.io/projectx/US2024.html "2024 National Polls") 📈📉
--   [2024 Swing States](https://jamesstats.github.io/projectx/mipawi.html "Swing States") 🎢
 -   [2020 Historical National Presidential Polls](https://jamesstats.github.io/projectx/prestwozero.html "2020 National Polls")📈📉

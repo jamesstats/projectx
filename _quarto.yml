@@ -7,14 +7,16 @@ website:
   reader-mode: False  
   back-to-top-navigation: true 
   page-footer: 
-    center: "Copyright 2024, Jamesstats"
+    center: "Copyright 2025, Jamesstats"
     right: 
       - icon: home
         href: index.qmd 
       - icon: github
         href: https://github.com/jamesstats/projectx
+      - icon: bluesky
+        href: https://bsky.app/jamespolls.bsky.social
       - icon: twitter
-        href: https://twitter.com/james_polls
+        href: https://twitter.com/james_polls 
   sidebar:
         
      

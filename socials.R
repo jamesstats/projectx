@@ -1,0 +1,95 @@
+library(readxl)
+library(zoo)
+library(dplyr)
+library(lubridate) 
+library(ggplot2) 
+library(extrafont) 
+#fetching the data
+us2024<-read_excel("~/Documents/elections_files/ge2024.xlsx",sheet = 'multi') 
+
+plmean <- us2024 %>%
+  dplyr::arrange(desc(candidates)) %>% 
+  dplyr::group_by(candidates) %>% 
+  dplyr::mutate(
+    pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
+    pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
+    pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
+    pct_05da = zoo::rollmean(pct, k = 5, fill = NA),
+    pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
+    pct_07da = zoo::rollmean(pct, k =7, fill =NA)) %>% 
+  dplyr::ungroup()  
+
+#changing the labels for the facets
+plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
+                      labels = c("Biden>Harris-Trump", "Biden>Harris-Trump-Kennedy-Stein-West")
+)
+#plot
+ggplot(plmean,aes(x=end_date, y=pct_05da, color=candidates))+
+  geom_jitter(alpha=0.6)+
+  geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
+  geom_vline(xintercept = as.POSIXct(as.Date(c("2023-10-07","2024-05-30","2024-06-27",'2024-07-21','2024-08-23','2024-09-10','2024-10-01'))), linetype=4)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2023-10-07"),y = 20, label = "Hamas Attacks", angle=90, vjust=0)+ 
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-05-30"),y = 20, label = "Trump Guilty", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-06-27"),y = 20, label = "1st Debate", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-07-21"),y = 25, label = "Biden Exit", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-08-23"),y = 25, label = "RFKJR Exit", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-09-10"),y = 25, label = "2nd Debate", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-10-01"),y = 25, label = "VP Debate", angle=90, vjust=0)+
+  labs(x="",y="",color="",caption = "Sources:(5DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CNN,Cygnal,Emerson,FoxNews,JLPartners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Quinnipiac\nx.com/james_polls")+
+  scale_colour_manual(values = c('#0099ff','yellow','green', '#ff6666','purple'))+
+  scale_y_continuous(limits = c(min(0),max(50)))+ 
+  theme_bw()+
+  theme(legend.position = 'none',strip.text.x = element_text(size = 12, color = "black", face = "bold.italic",family = "Andale Mono"),strip.text.y = element_text(size = 8,
+                                                                                                                                                                  color = "black", face ="bold.italic",family = "Andale Mono"),strip.background = element_rect(color="black", fill="white", size=0.5, linetype="solid"
+                                                                                                                                                                  ),plot.caption = element_text(face = "bold.italic",family = "Andale Mono"),
+        axis.text.x = element_text(face = 'bold',family = 'Andale Mono'),
+        axis.text.y = element_text(face = 'bold',family = 'Andale Mono'))+ 
+  facet_wrap(~type,nrow = 2)  
+
+ggsave('fullpolls.png',dpi = 1080) 
+
+#HarrisvsTrump
+library(readxl)
+library(zoo)
+library(dplyr)
+library(lubridate) 
+library(ggplot2) 
+library(extrafont) 
+#fetching the data
+us2024<-read_excel("~/Documents/elections_files/ge2024.xlsx",sheet = 'KMDT') 
+
+plmean <- us2024 %>%
+  dplyr::arrange(desc(candidates)) %>% 
+  dplyr::group_by(candidates) %>% 
+  dplyr::mutate(
+    pct_02da = zoo::rollmean(pct, k = 2, fill = NA),
+    pct_03da = zoo::rollmean(pct, k = 3, fill = NA),
+    pct_04da = zoo::rollmean(pct, k = 4, fill = NA),
+    pct_05da = zoo::rollmean(pct, k = 5, fill = NA),
+    pct_06da = zoo::rollmean(pct, k = 6, fill = NA),
+    pct_07da = zoo::rollmean(pct, k =7, fill =NA)) %>% 
+  dplyr::ungroup()  
+
+#changing the labels for the facets
+plmean$type <- factor(plmean$type, levels = c("2_Way", "Multi"),
+                      labels = c("Harris-Trump", "Harris-Trump-Kennedy-Stein-West") 
+)
+#plot
+ggplot(plmean,aes(x=end_date, y=pct_05da, color=candidates))+
+  geom_jitter(alpha=0.6)+
+  geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
+  geom_vline(xintercept = as.POSIXct(as.Date(c('2024-08-23','2024-09-10','2024-10-01'))), linetype=4)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-08-23"),y = 25, label = "RFKJR Exit", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-09-10"),y = 25, label = "2nd Debate", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-10-01"),y = 25, label = "VP Debate", angle=90, vjust=0)+
+  labs(x="",y="",color="",caption = "Sources:(5DAWMA)AtlasIntel,CBS,Civiqs,CNBC,CNN,Cygnal,Emerson,FoxNews,JLPartners\nMarist,Marquette,NBCNews,NYT/Siena,TippInsights,USAToday,Quinnipiac\nx.com/james_polls")+
+  scale_colour_manual(values = c('#0099ff','yellow','green', '#ff6666','purple'))+
+  scale_y_continuous(limits = c(min(0),max(50)))+ 
+  theme_bw()+
+  theme(legend.position = 'none',strip.text.x = element_text(size = 12, color = "black", face = "bold.italic",family = "Andale Mono"),strip.text.y = element_text(size = 8,
+                                                                                                                                                                  color = "black", face ="bold.italic",family = "Andale Mono"),strip.background = element_rect(color="black", fill="white", size=0.5, linetype="solid"
+                                                                                                                                                                  ),plot.caption = element_text(face = "bold.italic",family = "Andale Mono"),
+        axis.text.x = element_text(face = 'bold',family = 'Andale Mono'),
+        axis.text.y = element_text(face = 'bold',family = 'Andale Mono'))+ 
+  facet_wrap(~type,nrow = 2)     
+ggsave('harristrump.png', dpi = 1080) 
