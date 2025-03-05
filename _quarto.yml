@@ -23,6 +23,8 @@ website:
     - contents:
       - section: "POLLS"
         contents:
+          - text: 'TRUMP APPROVAL RATING'
+            href: trumptrck.qmd
           - text: "U.K NATIONAL POLLS"
             href: uknext.qmd
           - text: "2024 US PRESIDENTIAL POLLS"

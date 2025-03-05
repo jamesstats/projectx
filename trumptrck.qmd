@@ -1,0 +1,39 @@
+---
+title: ""
+editor: visual
+---
+
+```{r, trumptracker, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center'}
+library(ggplot2)
+library(lubridate)
+library(zoo)
+library(dplyr)
+library(readxl)
+#fetching data
+TrumpTracker <- read_excel("~/Downloads/TrumpTracker.xlsx")
+#weight
+DTPoll <- TrumpTracker %>%
+  dplyr::arrange(desc(Opinion)) %>% 
+  dplyr::group_by(Opinion) %>% 
+  dplyr::mutate(pct_02da = zoo::rollmean(Share, k = 2, fill = NA),
+                pct_04da = zoo::rollmean(Share, k = 4, fill = NA),
+                pct_06da = zoo::rollmean(Share, k = 6, fill = NA),
+                pct_08da = zoo::rollmean(Share, k = 8, fill = NA),
+                pct_10da = zoo::rollmean(Share, k = 10, fill = NA)) %>% 
+  dplyr::ungroup() 
+#chart
+ggplot(DTPoll, mapping = aes(x=Date, y=pct_04da, color=Opinion))+
+  geom_jitter(alpha=0.6)+ 
+  geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
+   scale_colour_manual(values = c('green','tomato'))+
+  scale_y_continuous(limits = c(min(30),max(60)))+ 
+   
+  theme_bw()+
+  labs(title = 'TRUMP APPROVAL TRACKING')+
+       
+  theme_minimal() +
+  theme(legend.position = "bottom",plot.title = element_text(family = "Andale Mono"),
+        legend.text = element_text(face = 'bold',family = 'Andale Mono'),
+        plot.caption = element_text(face = 'italic',hjust=1,family = "Andale Mono", size = 10),
+        axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold")) 
+```
