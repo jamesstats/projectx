@@ -6,7 +6,8 @@ editor: 'visual'
 
 *VOTING INTENTION POLLING TRACKER FOR WESTMINSTER NEXT ELECTION*
 
-```{r,nationalpolls, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center'}
+```{r,nationalpolls, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center',fig.dim=c(12,8),fig.dpi=1080}
+
 library(ggplot2)
 library(lubridate)
 library(zoo)
@@ -33,7 +34,7 @@ ggplot(natpoll, mapping = aes(x=Date, y=pct_02da, color=Party))+
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-07-04"),y = 25, label = "General Elections", angle=90, vjust=0)+
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-11-02"),y = 25, label = "Badenoch New Cons Leader", angle=90, vjust=0)+
   scale_colour_manual(values = c('#0099FF','green','tomato','orange',"cyan","yellow"))+
-  scale_y_continuous(limits = c(min(0),max(50)))+ 
+  scale_y_continuous(limits = c(min(0),max(40)))+ 
    
   theme_bw()+
   labs(title = '',caption = 'Sources:BMG,DeltaPoll,Opinum,MoreInCommon,JL Partners,YouGov\njamesstats.github.io/projectx/britain',x='',y='',color='')+

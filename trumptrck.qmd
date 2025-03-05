@@ -3,7 +3,9 @@ title: ""
 editor: visual
 ---
 
-```{r, trumptracker, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center'}
+*Tracking the approval rating of Donald Trump second stint in the White House.*
+
+```{r, trumptracker, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', fig.dim=c(12,8),fig.dpi=1080}
 library(ggplot2)
 library(lubridate)
 library(zoo)
@@ -26,10 +28,10 @@ ggplot(DTPoll, mapping = aes(x=Date, y=pct_04da, color=Opinion))+
   geom_jitter(alpha=0.6)+ 
   geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
    scale_colour_manual(values = c('green','tomato'))+
-  scale_y_continuous(limits = c(min(30),max(60)))+ 
+  scale_y_continuous(limits = c(min(35),max(55)))+ 
    
   theme_bw()+
-  labs(title = 'TRUMP APPROVAL TRACKING')+
+  labs(title = 'TRUMP APPROVAL TRACKING',x='',y='',color='')+ 
        
   theme_minimal() +
   theme(legend.position = "bottom",plot.title = element_text(family = "Andale Mono"),
