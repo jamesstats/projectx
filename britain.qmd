@@ -1,56 +1,10 @@
 ---
-title: ""
+title: "2024 U.K GENERAL ELECTIONS"
 format: html
+editor: 'visual'
 ---
 
-**Aggregated National Polling after the 2024 general elections.**
-
-```{r, nationalpolls, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center'}
-library(ggplot2)
-library(lubridate)
-library(zoo)
-library(dplyr)
-library(readxl)
-#fetching data
-UKPolling <- read_excel("~/Downloads/UKPolling.xlsx")
-#weight
-natpoll <- UKPolling %>%
-  dplyr::arrange(desc(Party)) %>% 
-  dplyr::group_by(Party) %>% 
-  dplyr::mutate(pct_02da = zoo::rollmean(Share, k = 2, fill = NA),
-                pct_04da = zoo::rollmean(Share, k = 4, fill = NA),
-                pct_06da = zoo::rollmean(Share, k = 6, fill = NA),
-                pct_08da = zoo::rollmean(Share, k = 8, fill = NA),
-                pct_10da = zoo::rollmean(Share, k = 10, fill = NA)) %>% 
-  dplyr::ungroup() 
-#chart
-ggplot(natpoll, mapping = aes(x=Date, y=pct_02da, color=Party))+
-  geom_jitter(alpha=0.6)+ 
-  geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
-  geom_vline(xintercept = as.POSIXct(as.Date(c("2024-07-04","2024-11-2",size=1.5))), linetype=4)+
-  
-  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-07-04"),y = 25, label = "General Elections", angle=90, vjust=0)+
-  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-11-02"),y = 25, label = "Badenoch New Cons Leader", angle=90, vjust=0)+
-  scale_colour_manual(values = c('#0099FF','green','tomato','orange',"cyan","yellow"))+
-  scale_y_continuous(limits = c(min(0),max(50)))+ 
-   
-  theme_bw()+
-  labs(title = 'Westminster Voting Intention',caption = 'Sources:BMG,DeltaPoll,Opinum,MoreInCommon,JL Partners,YouGov\njamesstats.github.io/projectx/britain',x='',y='',color='')+
-  theme_minimal() +
-  theme(legend.position = "bottom",plot.title = element_text(family = "Andale Mono"),
-        legend.text = element_text(face = 'bold',family = 'Andale Mono'),
-        plot.caption = element_text(face = 'italic',hjust=1,family = "Andale Mono", size = 10),
-        axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold"))   
-
-```
-
-**Polling Averages**
-
-| End Date     | Labour | Conservatives | Reform | Lib Dems | Greens | SNP  |
-|--------------|:------:|:-------------:|:------:|:--------:|:------:|:----:|
-| Feb 28, 2025 |  26%   |     22.5%     | 24.5%  |  13.5%   |   8%   | 2.5% |
-
-**AGGREGATED NATIONAL POLLS FOR GENERAL ELECTION 2024 FROM JANUARY TO JULY**
+*AGGREGATED NATIONAL POLLS FOR GENERAL ELECTION 2024 FROM JANUARY TO JULY*
 
 ```{r,westminster, echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 library(ggplot2)

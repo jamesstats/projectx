@@ -84,11 +84,81 @@
     "text": "2020"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "philly.html",
+    "href": "philly.html",
+    "title": "",
     "section": "",
-    "text": "Welcome to my website!\n\n2024 National Presidential Polls 📈📉\n2020 Historical National Presidential Polls📈📉\n\n\n\n\n Back to top"
+    "text": "A look at the presidential election results of the city of Philadelphia which is important for statewide victory for democrats. Philadelphia is also a majority black city, they live in the dark blue areas as they are a strong voting block for the democrats.\n\n\n\n\n\nObama`08 dominated the city of Philadelphia against McCain, he even did very well in the white working class area in the north of the city.\n\nObama`12 also did well even though he lost about 1,000 votes mainly due to low turnout in the black neighborhood. He maintained his support in the north but the story was Romney doing worse than McCain did 2008.\n\n\n\n\n\nThe change from 2008 and 2012 for Obama. 2012 had turnout drop from 2008, green areas is where he did better in ’12 and blue areas are where he did worse from ’08.\n\n\n\n\n\nMap showing how McCain’08 and Romney’12 performed. McCain did well in the white areas while Romney did well in the black and Latino areas of the city.\n\n\n\n\n\nTurnout in 2012 increased from 2008 mainly in white areas while it decreased in mainly black areas.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "Milton.html",
+    "href": "Milton.html",
+    "title": "",
+    "section": "",
+    "text": "How the affluent Town of Milton voted on a ballot question for building multi-family homes in a accordance to zoning law passed by the state legislature. Voters rejected the zoning law by 8%. The NO vote came mainly from high income white parts of the town which is 70% white."
+  },
+  {
+    "objectID": "Milton.html#map",
+    "href": "Milton.html#map",
+    "title": "",
+    "section": "Map",
+    "text": "Map"
+  },
+  {
+    "objectID": "prestwozero.html",
+    "href": "prestwozero.html",
+    "title": "",
+    "section": "",
+    "text": "A look at the polls from the 2020 presidential election between Donald Trump and Joe Biden by their ratings from 538.com. The A’s polls had Biden at or above 50% through the eleven month and they underestimated Trump 80% of the time having him below 45%.\n\n\n\n\n\n\n\n\n\nThe B and B/C polls were the worst for Trump as they put him below 45% to 40% and had Biden reach the 50% after the summer.\n\n\n\n\n\n\n\n\n\nThe C and C/D polls were surprisingly better as they didn’t diverge too much, they had Trump hoovering above 45% and Biden above 50% but there not many polls conducted.\n\n\n\n\n\n\n\n\n\nThe polls without ratings didn’t do too well the few of them as they had Trump below 40%.\n\n\n\n\n\n\n\n\n\nAll the polls were download from 538.com, separated by their ratings and calculated on a 2-day moving average using the rstudio zoo library.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "home.html",
+    "href": "home.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to my website where I have different projectx!\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "US2024.html",
+    "href": "US2024.html",
+    "title": "DECISION2024",
+    "section": "",
+    "text": "End Date\nHarris\nTrump\nLead\nType\n\n\n\n\nNov 3, 2024\n47.6%\n49.2%\n+1.6% Trump\nHead-to-Head\n\n\nNov 3, 2024\n47.6%\n48.8%\n+1.2% Trump\nwith Third-Parties\n\n\n\nUsed 5-Day weighted moving average(WMA) to aggregate the average of the polls."
+  },
+  {
+    "objectID": "US2024.html#national-polling-average",
+    "href": "US2024.html#national-polling-average",
+    "title": "DECISION2024",
+    "section": "",
+    "text": "End Date\nHarris\nTrump\nLead\nType\n\n\n\n\nNov 3, 2024\n47.6%\n49.2%\n+1.6% Trump\nHead-to-Head\n\n\nNov 3, 2024\n47.6%\n48.8%\n+1.2% Trump\nwith Third-Parties\n\n\n\nUsed 5-Day weighted moving average(WMA) to aggregate the average of the polls."
+  },
+  {
+    "objectID": "pres2020.html",
+    "href": "pres2020.html",
+    "title": "2020 Presidential Election National Polls",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "MAStateHouse.html",
+    "href": "MAStateHouse.html",
+    "title": "",
+    "section": "",
+    "text": "Seats that flipped overview in the red wave of 2010\n\n\n\n\n\n\n\nEvery vote counts!\n\n\n\n\n\n\n\nCloser look at Worcester County\n\n\n\n\n\n\n\nCloser look at Bristol and Plymouth Counties\n\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "GB.html",
+    "href": "GB.html",
+    "title": "",
+    "section": "",
+    "text": "The general election will be on 4th of July 2024. The polls used for the aggregate are all sponsored by news paper, radio, news channels and conducted by major firms."
+  },
+  {
+    "objectID": "GB.html#polling-averages",
+    "href": "GB.html#polling-averages",
+    "title": "",
+    "section": "Polling Averages",
+    "text": "Polling Averages\n\n\n\nEnd Date\nCon\nLab\nLib Dem\nSNP\nGreens\nReform\n\n\n\n\nMay 29.2024\n22.5%\n45.5%\n8.5%\n2.8%\n6.3%\n12.5%\n\n\nMar 31.2024\n22.5%\n43.5%\n9.5%\n3%\n6.5%\n13.3%\n\n\nFeb 28.2024\n23.5%\n45.3%\n8.5%\n3.3%\n5.8%\n11.5%\n\n\n\nUsed 2-Day weighted moving average(WMA) to aggregate the average the polls."
   },
   {
     "objectID": "mass.html",
@@ -119,93 +189,30 @@
     "text": "2000 to 2010\n\n\n\n\n\n\nThe data and shapefile are from Massachusetts GIS Townssurvey and Census."
   },
   {
-    "objectID": "GB.html",
-    "href": "GB.html",
-    "title": "",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
     "section": "",
-    "text": "The general election will be on 4th of July 2024. The polls used for the aggregate are all sponsored by news paper, radio, news channels and conducted by major firms."
+    "text": "Welcome to my website!\n\n2024 National Presidential Polls 📈📉\n2020 Historical National Presidential Polls📈📉\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "GB.html#polling-averages",
-    "href": "GB.html#polling-averages",
-    "title": "",
-    "section": "Polling Averages",
-    "text": "Polling Averages\n\n\n\nEnd Date\nCon\nLab\nLib Dem\nSNP\nGreens\nReform\n\n\n\n\nMay 29.2024\n22.5%\n45.5%\n8.5%\n2.8%\n6.3%\n12.5%\n\n\nMar 31.2024\n22.5%\n43.5%\n9.5%\n3%\n6.5%\n13.3%\n\n\nFeb 28.2024\n23.5%\n45.3%\n8.5%\n3.3%\n5.8%\n11.5%\n\n\n\nUsed 2-Day weighted moving average(WMA) to aggregate the average the polls."
-  },
-  {
-    "objectID": "MAStateHouse.html",
-    "href": "MAStateHouse.html",
-    "title": "",
+    "objectID": "uknext.html",
+    "href": "uknext.html",
+    "title": "Great Britain NATIONAL POLLS",
     "section": "",
-    "text": "Seats that flipped overview in the red wave of 2010\n\n\n\n\n\n\n\nEvery vote counts!\n\n\n\n\n\n\n\nCloser look at Worcester County\n\n\n\n\n\n\n\nCloser look at Bristol and Plymouth Counties\n\n\n\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "pres2020.html",
-    "href": "pres2020.html",
-    "title": "2020 Presidential Election National Polls",
-    "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "US2024.html",
-    "href": "US2024.html",
-    "title": "DECISION2024",
-    "section": "",
-    "text": "End Date\nHarris\nTrump\nLead\nType\n\n\n\n\nNov 3, 2024\n47.6%\n49.2%\n+1.6% Trump\nHead-to-Head\n\n\nNov 3, 2024\n47.6%\n48.8%\n+1.2% Trump\nwith Third-Parties\n\n\n\nUsed 5-Day weighted moving average(WMA) to aggregate the average of the polls."
-  },
-  {
-    "objectID": "US2024.html#national-polling-average",
-    "href": "US2024.html#national-polling-average",
-    "title": "DECISION2024",
-    "section": "",
-    "text": "End Date\nHarris\nTrump\nLead\nType\n\n\n\n\nNov 3, 2024\n47.6%\n49.2%\n+1.6% Trump\nHead-to-Head\n\n\nNov 3, 2024\n47.6%\n48.8%\n+1.2% Trump\nwith Third-Parties\n\n\n\nUsed 5-Day weighted moving average(WMA) to aggregate the average of the polls."
-  },
-  {
-    "objectID": "home.html",
-    "href": "home.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Welcome to my website where I have different projectx!\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "prestwozero.html",
-    "href": "prestwozero.html",
-    "title": "",
-    "section": "",
-    "text": "A look at the polls from the 2020 presidential election between Donald Trump and Joe Biden by their ratings from 538.com. The A’s polls had Biden at or above 50% through the eleven month and they underestimated Trump 80% of the time having him below 45%.\n\n\n\n\n\n\n\n\n\nThe B and B/C polls were the worst for Trump as they put him below 45% to 40% and had Biden reach the 50% after the summer.\n\n\n\n\n\n\n\n\n\nThe C and C/D polls were surprisingly better as they didn’t diverge too much, they had Trump hoovering above 45% and Biden above 50% but there not many polls conducted.\n\n\n\n\n\n\n\n\n\nThe polls without ratings didn’t do too well the few of them as they had Trump below 40%.\n\n\n\n\n\n\n\n\n\nAll the polls were download from 538.com, separated by their ratings and calculated on a 2-day moving average using the rstudio zoo library.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "Milton.html",
-    "href": "Milton.html",
-    "title": "",
-    "section": "",
-    "text": "How the affluent Town of Milton voted on a ballot question for building multi-family homes in a accordance to zoning law passed by the state legislature. Voters rejected the zoning law by 8%. The NO vote came mainly from high income white parts of the town which is 70% white."
-  },
-  {
-    "objectID": "Milton.html#map",
-    "href": "Milton.html#map",
-    "title": "",
-    "section": "Map",
-    "text": "Map"
-  },
-  {
-    "objectID": "philly.html",
-    "href": "philly.html",
-    "title": "",
-    "section": "",
-    "text": "A look at the presidential election results of the city of Philadelphia which is important for statewide victory for democrats. Philadelphia is also a majority black city, they live in the dark blue areas as they are a strong voting block for the democrats.\n\n\n\n\n\nObama`08 dominated the city of Philadelphia against McCain, he even did very well in the white working class area in the north of the city.\n\nObama`12 also did well even though he lost about 1,000 votes mainly due to low turnout in the black neighborhood. He maintained his support in the north but the story was Romney doing worse than McCain did 2008.\n\n\n\n\n\nThe change from 2008 and 2012 for Obama. 2012 had turnout drop from 2008, green areas is where he did better in ’12 and blue areas are where he did worse from ’08.\n\n\n\n\n\nMap showing how McCain’08 and Romney’12 performed. McCain did well in the white areas while Romney did well in the black and Latino areas of the city.\n\n\n\n\n\nTurnout in 2012 increased from 2008 mainly in white areas while it decreased in mainly black areas.\n\n\n\n Back to top"
+    "text": "VOTING INTENTION POLLING TRACKER FOR WESTMINSTER NEXT ELECTION\n\n\n\n\n\n\n\n\n\nPOLLING AVERAGES\n\n\n\n\n\n\n\n\n\n\n\n\nEnd Date\nLabour\nConservatives\nReform\nLib Dems\nGreens\nSNP\n\n\n\n\nFeb 28, 2025\n26%\n22.5%\n24.5%\n13.5%\n8%\n2.5%\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "britain.html",
     "href": "britain.html",
-    "title": "",
+    "title": "2024 U.K GENERAL ELECTIONS",
     "section": "",
-    "text": "Aggregated National Polling after the 2024 general elections.\nPolling Averages\nAGGREGATED NATIONAL POLLS FOR GENERAL ELECTION 2024 FROM JANUARY TO JULY"
+    "text": "AGGREGATED NATIONAL POLLS FOR GENERAL ELECTION 2024 FROM JANUARY TO JULY"
   },
   {
     "objectID": "britain.html#polling-averages",
     "href": "britain.html#polling-averages",
-    "title": "",
+    "title": "2024 U.K GENERAL ELECTIONS",
     "section": "Polling Averages",
     "text": "Polling Averages\n\n\n\nEnd Date\nCon\nLab\nLib Dem\nSNP\nGreens\nReform\n\n\n\n\nJul 3.2024\n19.6%\n39.6%\n10.9%\n3%\n6.4%\n17.6%\n\n\nJun 30.2024\n20.3%\n40.5%\n11.5%\n2.6%\n6%\n16.4%\n\n\nMar 31.2024\n22.5%\n43.5%\n9.5%\n3%\n6.5%\n13.3%\n\n\nFeb 28.2024\n23.5%\n45.3%\n8.5%\n3.3%\n5.8%\n11.5%\n\n\n\nUsed 2-Day weighted moving average(WMA) to aggregate the average the polls.\nPolling results break down by sponsors with polling firms.\n\n\n\n\n\n\n\n\n\n-------------------------------------------------------------------------------------------------------------------------\nGeneral Election polling comparison with 30 days to go in 2019 vs 2024."
   },

@@ -23,11 +23,13 @@ website:
     - contents:
       - section: "POLLS"
         contents:
-          - text: "2024 National Polls"
+          - text: "U.K NATIONAL POLLS"
+            href: uknext.qmd
+          - text: "2024 US PRESIDENTIAL POLLS"
             href: US2024.qmd 
-          - text: "Westminister Polls"
+          - text: "2024 U.K GENERAL ELECTIONS"
             href: britain.qmd  
-          - text: "2020 National Polls"
+          - text: "2020 US PRESIDENTIAL POLLS"
             href: prestwozero.qmd
             
 format:
