@@ -47,6 +47,6 @@ ggplot(natpoll, mapping = aes(x=Date, y=pct_02da, color=Party))+
 
 [**POLLING AVERAGES**]{.underline}
 
-| End Date    |  Lab  | Cons |  Ref  | Lib  | Grn  | SNP  |
-|-------------|:-----:|:----:|:-----:|:----:|:----:|:----:|
-| Mar 2, 2025 | 25.5% | 21%  | 25.5% | 13%  | 9.5% | 2.5% |
+| End Date     |  Lab  | Cons  |  Ref  |  Lib  | Grn | SNP |
+|--------------|:-----:|:-----:|:-----:|:-----:|:---:|:---:|
+| Mar 16, 2025 | 25.5% | 23.5% | 23.5% | 12.5% | 9%  | 3%  |
