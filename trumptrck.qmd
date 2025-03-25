@@ -40,7 +40,7 @@ ggplot(DTPoll, mapping = aes(x=Date, y=pct_04da, color=Opinion))+
         axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold")) 
 ```
 
-|               |             |                |
-|:-------------:|:-----------:|:--------------:|
-|   **Date**    | **Approve** | **Disapprove** |
-| March 9, 2025 |     46%     |     48.8%      |
+|                |             |                |
+|:--------------:|:-----------:|:--------------:|
+|    **Date**    | **Approve** | **Disapprove** |
+| March 11, 2025 |    47.5%    |      49%       |
