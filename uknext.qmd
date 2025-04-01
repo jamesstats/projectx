@@ -20,10 +20,9 @@ natpoll <- UKPolling %>%
   dplyr::arrange(desc(Party)) %>% 
   dplyr::group_by(Party) %>% 
   dplyr::mutate(pct_02da = zoo::rollmean(Share, k = 2, fill = NA),
+                pct_03da = zoo::rollmean(Share, k = 3, fill = NA),
                 pct_04da = zoo::rollmean(Share, k = 4, fill = NA),
-                pct_06da = zoo::rollmean(Share, k = 6, fill = NA),
-                pct_08da = zoo::rollmean(Share, k = 8, fill = NA),
-                pct_10da = zoo::rollmean(Share, k = 10, fill = NA)) %>% 
+                pct_05da = zoo::rollmean(Share, k = 5, fill = NA)) %>% 
   dplyr::ungroup() 
 #chart
 ggplot(natpoll, mapping = aes(x=Date, y=pct_02da, color=Party))+
@@ -47,6 +46,6 @@ ggplot(natpoll, mapping = aes(x=Date, y=pct_02da, color=Party))+
 
 [**POLLING AVERAGES**]{.underline}
 
-| End Date     |  Lab  | Cons  | Ref |  Lib  | Grn | SNP |
-|--------------|:-----:|:-----:|:---:|:-----:|:---:|:---:|
-| Mar 21, 2025 | 24.5% | 21.5% | 24% | 14.5% | 9%  | 3%  |
+| End Date     | Lab | Cons |  Ref  | Lib | Grn | SNP |
+|--------------|:---:|:----:|:-----:|:---:|:---:|:---:|
+| Mar 26, 2025 | 26% | 23%  | 24.5% | 13% | 8%  | 3%  |

@@ -18,13 +18,12 @@ DTPoll <- TrumpTracker %>%
   dplyr::arrange(desc(Opinion)) %>% 
   dplyr::group_by(Opinion) %>% 
   dplyr::mutate(pct_02da = zoo::rollmean(Share, k = 2, fill = NA),
+                pct_03da = zoo::rollmean(Share, k = 3, fill = NA),
                 pct_04da = zoo::rollmean(Share, k = 4, fill = NA),
-                pct_06da = zoo::rollmean(Share, k = 6, fill = NA),
-                pct_08da = zoo::rollmean(Share, k = 8, fill = NA),
-                pct_10da = zoo::rollmean(Share, k = 10, fill = NA)) %>% 
+                pct_05da = zoo::rollmean(Share, k = 5, fill = NA)) %>% 
   dplyr::ungroup() 
 #chart
-ggplot(DTPoll, mapping = aes(x=Date, y=pct_04da, color=Opinion))+
+ggplot(DTPoll, mapping = aes(x=Date, y=pct_03da, color=Opinion))+
   geom_jitter(alpha=0.6)+ 
   geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
    scale_colour_manual(values = c('green','tomato'))+
@@ -43,4 +42,4 @@ ggplot(DTPoll, mapping = aes(x=Date, y=pct_04da, color=Opinion))+
 |                |             |                |
 |:--------------:|:-----------:|:--------------:|
 |    **Date**    | **Approve** | **Disapprove** |
-| March 11, 2025 |    47.5%    |      49%       |
+| March 25, 2025 |     48%     |      48%       |
