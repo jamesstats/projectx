@@ -26,8 +26,12 @@ DTPoll <- TrumpTracker %>%
 ggplot(DTPoll, mapping = aes(x=Date, y=pct_03da, color=Opinion))+
   geom_jitter(alpha=0.6)+ 
   geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
+  geom_vline(xintercept = as.POSIXct(as.Date(c("2025-01-20","2025-04-02", size=1.5))), linetype=4)+
+  
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2025-01-20"),y = 50, label = "Inauguration 2025", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2025-04-02"),y = 50, label = "Tariffs Announced", angle=90, vjust=0)+
    scale_colour_manual(values = c('green','tomato'))+
-  scale_y_continuous(limits = c(min(35),max(55)))+ 
+  scale_y_continuous(limits = c(min(35),max(60)))+ 
    
   theme_bw()+
   labs(title = 'TRUMP APPROVAL TRACKING',x='',y='',color='', caption = 'jamesstats.github.io/projectx')+ 
@@ -39,7 +43,7 @@ ggplot(DTPoll, mapping = aes(x=Date, y=pct_03da, color=Opinion))+
         axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold")) 
 ```
 
-|               |             |                |
-|:-------------:|:-----------:|:--------------:|
-|   **Date**    | **Approve** | **Disapprove** |
-| April 2, 2025 |    46.7%    |     49.3%      |
+|                |             |                |
+|:--------------:|:-----------:|:--------------:|
+|    **Date**    | **Approve** | **Disapprove** |
+| April 24, 2025 |     43%     |      55%       |

@@ -30,7 +30,7 @@ ggplot(natpoll, mapping = aes(x=Date, y=pct_02da, color=Party))+
   geom_smooth(method = 'loess', formula = 'y~x',span=0.5, se=FALSE, lwd=1.5)+
   geom_vline(xintercept = as.POSIXct(as.Date(c("2024-07-04","2024-11-2","2025-04-02", size=1.5))), linetype=4)+
   
-  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-07-04"),y = 25, label = "General Elections", angle=90, vjust=0)+
+  annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-07-04"),y = 25, label = "GE2024", angle=90, vjust=0)+
   annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2024-11-02"),y = 25, label = "Badenoch New Cons Leader", angle=90, vjust=0)+
     annotate("text",fontsize=10, fontface="italic", x = as.POSIXct("2025-04-02"),y = 25, label = "Tariffs Announced", angle=90, vjust=0)+
 
@@ -48,6 +48,6 @@ ggplot(natpoll, mapping = aes(x=Date, y=pct_02da, color=Party))+
 
 [**POLLING AVERAGES**]{.underline}
 
-| End Date    | Lab | Cons  |  Ref  | Lib | Grn | SNP |
-|-------------|:---:|:-----:|:-----:|:---:|:---:|:---:|
-| Apr 4, 2025 | 24% | 22.5% | 23.5% | 17% | 8%  | 3%  |
+| End Date     | Lab | Cons | Ref |  Lib  | Grn | SNP |
+|--------------|:---:|:----:|:---:|:-----:|:---:|:---:|
+| Apr 23, 2025 | 23% | 20%  | 27% | 12.5% | 11% | 3%  |
