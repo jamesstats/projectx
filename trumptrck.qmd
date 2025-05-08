@@ -46,4 +46,4 @@ ggplot(DTPoll, mapping = aes(x=Date, y=pct_03da, color=Opinion))+
 |                |             |                |
 |:--------------:|:-----------:|:--------------:|
 |    **Date**    | **Approve** | **Disapprove** |
-| April 24, 2025 |     43%     |      55%       |
+| April 28, 2025 |     47%     |      50%       |
