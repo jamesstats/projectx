@@ -12,7 +12,9 @@ library(zoo)
 library(dplyr)
 library(readxl)
 #fetching data
-TrumpTracker <- read_excel("~/Downloads/TrumpTracker.xlsx")
+TrumpTracker <- read_excel("~/Downloads/TrumpTracker.xlsx", 
+    col_types = c("date", "numeric", "text", 
+        "text"))
 #weight
 DTPoll <- TrumpTracker %>%
   dplyr::arrange(desc(Opinion)) %>% 
@@ -43,7 +45,7 @@ ggplot(DTPoll, mapping = aes(x=Date, y=pct_03da, color=Opinion))+
         axis.text.x = element_text(face = "bold"),axis.text.y = element_text(face = "bold")) 
 ```
 
-|                |             |                |
-|:--------------:|:-----------:|:--------------:|
-|    **Date**    | **Approve** | **Disapprove** |
-| April 28, 2025 |     47%     |      50%       |
+|              |             |                |
+|:------------:|:-----------:|:--------------:|
+|   **Date**   | **Approve** | **Disapprove** |
+| May 18, 2025 |    45.7%    |      53%       |
